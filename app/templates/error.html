@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: smooth;">
+  <head>
+    <title>MDplus DS & AI</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3B79B8" />
+    <script src="https://use.fontawesome.com/cefbebdc70.js"></script>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/mdplus-logo.png') }}" />
+    <link rel="apple-touch-icon" type="image/png" href="{{ url_for('static', filename='images/mdplus-logo.png') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/global.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/error.css') }}" />
+  </head>
+  <body>
+    <a href="/"><img src="{{ url_for('static', filename='images/mdplus-logo.png') }}" alt="MDplus Logo" class="logo"/></a>
+    <nav>
+      <a href="/resources">Resources</a>
+      <a href="/blog">Blog</a>
+      <a href="/opportunities">Opportunities</a>
+      <a href="/datathon/2023">Datathon</a>
+    </nav>
+
+    <h2>{{ error }}</h2>
+    <p>Something went wrong and our team is looking into it. Come back to our <a href="/" style="color: var(--BLUE);">homepage</a> (or help us interpret this EKG).</p>
+    <div class="heart-rate">
+      <svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="113px" height="55px" viewBox="0 0 150 73" enable-background="new 0 0 150 73" xml:space="preserve">
+      <polyline fill="none" stroke="#FF000088" stroke-width="2" stroke-miterlimit="10" points="0,45.486 38.514,45.486 44.595,33.324 50.676,45.486 57.771,45.486 62.838,55.622 71.959,9 80.067,63.729 84.122,45.486 97.297,45.486 103.379,40.419 110.473,45.486 150,45.486" />
+      </svg>
+    </div>
+
+    <footer>
+      <p>&#169;<span id="footer-current-year"></span>. A community project made with &#10084;&#65039; by <a href="https://www.mdplus.community">MDplus</a>. All rights reserved. <a href="/changelog">Changelog</a>.</p>
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='styles/js/footer.js') }}"></script>
+  </body>
+</html>

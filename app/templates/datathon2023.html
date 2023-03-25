@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: smooth;">
+  <head>
+    <title>MDplus DS & AI - Datathon</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3B79B8" />
+    <script src="https://use.fontawesome.com/cefbebdc70.js"></script>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/mdplus-logo.png') }}" />
+    <link rel="apple-touch-icon" type="image/png" href="{{ url_for('static', filename='images/mdplus-logo.png') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/global.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/index.css') }}" />
+  </head>
+  <body>
+    <a href="/"><img src="{{ url_for('static', filename='images/mdplus-logo.png') }}" alt="MDplus Logo" class="logo"/></a>
+    <nav>
+      <a href="/resources">Resources</a>
+      <a href="/blog">Blog</a>
+      <a href="/opportunities">Opportunities</a>
+      <a href="#about" class="active">Datathon</a>
+    </nav>
+
+    <p style="text-align: center;margin-top: 100px;">More info coming soon! Read more about last year&apos;s <a href="https://medium.com/mdplus/inaugural-md-datathon-2022-4947b28b2181" target="_blank" style="color: var(--BLUE);">inaugural Datathon</a>.</p>
+
+    <footer>
+      <p>&#169;<span id="footer-current-year"></span>. A community project made with &#10084;&#65039; by <a href="https://www.mdplus.community">MDplus</a>. All rights reserved. <a href="/changelog">Changelog</a>.</p>
+    </footer>
+    <script type="text/javascript" src="{{ url_for('static', filename='styles/js/footer.js') }}"></script>
+  </body>
+</html>

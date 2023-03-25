@@ -1,0 +1,24 @@
+h2 {
+  text-align: center;
+  margin: 150px auto 25px auto;
+  color: var(--INDIGO);
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 28px;
+}
+
+p {
+  margin: 0 auto;
+  max-width: 500px;
+  text-align: center;  
+  color: #818181;
+  font-size: 14px;
+}
+
+.heart-rate {
+  text-align: center;
+  max-width: 180px;
+  height: 143px;
+  position: relative;
+  margin: 25px auto;
+}

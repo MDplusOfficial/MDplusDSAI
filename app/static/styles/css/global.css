@@ -1,0 +1,108 @@
+:root {
+  --BLUE: #3B79B8;
+  --YELLOW: #FFCB1E;
+  --INDIGO: #030660;
+  --LIGHT-GRAY: #F1F1F1;
+  --WHITE: #FFFFFF;
+  --FONT: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; 
+  --FONT-COLOR: #1F1F1F;
+}
+
+html {
+  background-color: #FAFAFA;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: var(--WHITE);
+  position: relative;
+  font-family: var(--FONT);
+  color: var(--FONT-COLOR);
+  width: calc(80% - (2 * 20px));
+  margin: 0 auto;
+  padding: 12px 20px;
+  border-left: 1px solid var(--LIGHT-GRAY);
+  border-right: 1px solid var(--LIGHT-GRAY);
+  background-size: 60px 60px;
+  background-image: radial-gradient(circle, #E1E1E1 1px, #E1E1E100 1.5px);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    width: calc(90% - (2 * 20px));
+  }
+}
+
+img.logo {
+  width: 40px;
+  position: absolute;
+  top: 35px;
+}
+
+nav {
+  padding: 8px 12px; 
+  width: max-content;
+  margin: 25px auto;
+  position: relative;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: var(--FONT-COLOR);
+  border: 1px solid #D1D1D1;
+  border-radius: calc(8px + (16px / 2));
+  box-shadow: 0px 4px 4px 0px #E1E1E1;
+}
+
+nav a {
+  color: var(--FONT-COLOR);
+  text-decoration: none;
+  padding: 0 12px;
+  font-weight: 500;
+  transition: 0.1s color ease-in-out;
+}
+
+nav a:hover, nav a.active {
+  color: var(--BLUE);
+}
+
+@media screen and (max-width: 768px) {
+  nav a.same-page, nav a.active {
+    display: none;
+  }
+  nav a {
+    padding: 0 6px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  nav {
+    width: min-content;
+    line-height: 1.5;
+  }
+}
+
+p {
+  padding: 0 50px;
+  color: var(--FONT-COLOR);
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 20px 0 0 0;
+  line-height: 1.5;
+}
+
+footer p {
+  padding: 25px 8px 15px 8px;
+  margin: 100px auto 0 auto;
+  position: relative;
+  text-align: center;
+  font-size: 13px;
+  color: #616161;
+  border-top: 1px solid var(--LIGHT-GRAY);
+}
+
+footer a {
+  color: var(--INDIGO);
+  text-decoration: none;
+}

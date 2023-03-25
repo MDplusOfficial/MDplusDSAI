@@ -1,0 +1,165 @@
+.page-title, .socials {
+  margin: 0;
+  padding: 0 50px;
+}
+
+h2.page-title {
+  font-weight: 500;
+  color: var(--INDIGO);
+  letter-spacing: 1px;
+  margin: 100px 0 0 0;
+}
+
+h1.page-title {
+  color: var(--FONT-COLOR);
+  letter-spacing: 1px;
+}
+
+h3.page-title {
+  color: var(--FONT-COLOR);
+  opacity: 0.65;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 20px 0 0 0;
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 900px) {
+  h3.page-title {
+    width: 600px;
+  }
+}
+
+.socials i {
+  margin: 20px 15px 50px 0;
+  font-size: 22px;
+  color: #818181;
+  background: transparent;
+  cursor: pointer;
+}
+
+.fa.fa-instagram:hover {
+  color: transparent;
+  background: radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+  background: -webkit-radial-gradient(circle at 30% 107%, #FDF497 0%, #FDF497 5%, #FD5949 45%, #D6249F 60%, #285AEB 90%);
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.fa.fa-linkedin:hover {
+  color: #0077B5;
+}
+
+.fa.fa-twitter:hover {
+  color: #1DA1F2;
+}
+
+.fa.fa-slack:hover {
+  color: #4A154B;
+}
+
+.fa.fa-github:hover {
+  color: #333;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding: 0 50px;
+  margin: 50px auto;
+}
+
+.body-container .left {
+  flex-grow: 1;
+}
+
+.body-container .right {
+  width: min(500px, calc(100% - (2 * 1px) - (2 * 20px)));
+  height: max-content;
+  border: 1px solid var(--LIGHT-GRAY);
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1068px) {
+  .body-container {
+    display: block;
+  }
+
+  .body-container .left, .body-container .right {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page-title, .socials, .body-container {
+    padding: 0 20px;
+  }
+
+  .body-container {
+    margin-top: 25px;
+  }
+}
+
+.block {
+  border-radius: 15px;
+  padding: 20px;
+  width: calc(100% - (2 * 20px));
+  transition: 0.1s background-color ease-in-out;
+  cursor: pointer;
+  color: var(--FONT-COLOR);
+}
+
+.block:not(:last-child) {
+  margin: 0 0 30px 0;
+}
+
+.block:hover {
+  background-color: #D1D1D133;
+}
+
+.block i {
+  font-size: 20px;
+}
+
+.block h1, .block p, .body-container .right h1, .body-container .right p {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 10px 0 0 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+}
+
+
+.block h1 {
+  color: var(--INDIGO);
+}
+
+.body-container .right h1 {
+  color: var(--FONT-COLOR);
+  margin: 0;
+}
+
+.block p, .body-container .right p {
+  color: var(--FONT-COLOR);
+  opacity: 0.7;
+}
+
+.body-container .right p {
+  font-size: 14px;
+  margin-top: 25px;
+  letter-spacing: 0;
+}
+
+.body-container .right a {
+  color: #1B5998;
+}
+
+.block p.preview {
+  color: var(--BLUE);
+  opacity: 1;
+  margin: 15px 0 0 0;
+}
