@@ -108,6 +108,13 @@ def blog():
     return render_template("blog.html")
 
 
+@app.route("/blog/<title>", methods=["GET"])
+def blogpost(title):
+    if len(title) == 0:
+        return redirect(url_for("blog"))
+    return render_template("blogposts/" + title + ".html")
+
+
 @app.route("/opportunities", methods=["GET"])
 def opportunities():
     return render_template("opportunities.html")

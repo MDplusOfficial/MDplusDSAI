@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" type="image/png" href="{{ url_for('static', filename='images/mdplus-logo.png') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/global.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/index.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/blog.css') }}" />
   </head>
   <body>
     <a href="/"><img src="{{ url_for('static', filename='images/mdplus-logo.png') }}" alt="MDplus Logo" class="logo"/></a>
@@ -20,10 +21,68 @@
       <a href="/datathon/2023">Datathon</a>
     </nav>
 
+    <div class="body-container">
+      <div class="right">
+        <h1><i class="fa fa-align-left" aria-hidden="true" style="margin-right: 15px;color: #8F8F8F;font-size: 24px;transform: translate(0, 3px);"></i> About</h1> 
+        <p>Our blog serves as a community platform for MD+ members to share and learn new ideas related to <span style="color: var(--INDIGO);font-weight: 500;">data science</span> and <span style="color: var(--INDIGO);font-weight: 500;">AI</span>. Blog posts can cover anything from recent research advancements to examples of clinical AI usage and op-eds on the role of data science across different medical specialties.</p>
+
+        <hr style="border: 1px solid #E8E8E8;margin: 25px auto;" />
+        <h1><i class="fa fa-pencil-square-o" aria-hidden="true" style="margin-right: 15px;color: #8F8F8F;font-size: 24px;transform: translate(0, 3px);"></i> Contribute</h1> 
+        <p>Have ideas you&apos;d like to share with the MD+ DS&#38;AI community? We&apos;re eager to hear your thoughts! Share your blog post with us using this <a href="https://forms.gle/Gm6DXcMv461k3CRa9" target="_blank">Google form</a> or submit a pull request to our <a href="https://github.com/michael-s-yao/MDplusDSAI" target="_blank">Github repo</a>. Make sure to read our <a href="https://github.com/michael-s-yao/MDplusDSAI/blob/main/CONTRIBUTING.md" target="_blank">contribution guidelines</a> before submitting.</p>
+      </div>
+      <div class="left">
+        <div class="tags" style="margin-bottom: 20px;">
+          <i class="fa fa-search" aria-hidden="true" style="margin-right: 10px;color: #8F8F8F;font-size: 18px;transform: translate(0, 1px);cursor: pointer;" onclick="tagReset();"></i>
+          <span class="tag people search" id="search-people" onclick="tagClick(this);">People</span>
+          <span class="tag vision search" id="search-vision" onclick="tagClick(this);">Vision</span>
+          <span class="tag language search" id="search-language" onclick="tagClick(this);">Language</span>
+          <span class="tag data search" id="search-data" onclick="tagClick(this);">Data</span>
+          <span class="tag diagnostics search" id="search-diagnostics" onclick="tagClick(this);">Diagnostics</span>
+          <span class="tag therapy search" id="search-therapy" onclick="tagClick(this);">Therapeutics</span>
+          <span class="tag opinion search" id="opinion" onclick="tagClick(this);">Opinion</span>
+        </div>
+        <hr style="border: 1px solid #E8E8E8;margin: 25px auto;" />
+
+        <a href="/blog/sample" style="text-decoration: none;"><div class="block" data-date="2023-03-20">
+          <div class="tags">
+            <i class="fa fa-tag" aria-hidden="true" style="margin-right: 10px;color: #8F8F8F;font-size: 18px;transform: translate(0, 2px);"></i>
+            <span class="tag vision">Vision</span>
+            <span class="tag people">People</span>
+            <span class="tag opinion">Opinion</span>
+            <span class="tag data">Data</span>
+          </div>
+          <h1>Sample Blog Post &emsp;<span class="date"></span></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <p class="preview">Read More<i class="fa fa-angle-right" aria-hidden="true" style="margin-left: 10px;font-size: 14px;"></i></p>
+        </div></a>
+
+        <a href="/blog/sample" style="text-decoration: none;"><div class="block" data-date="2023-01-20">
+          <div class="tags">
+            <i class="fa fa-tag" aria-hidden="true" style="margin-right: 10px;color: #8F8F8F;font-size: 18px;transform: translate(0, 2px);"></i>
+            <span class="tag language">Language</span>
+            <span class="tag diagnostics">Diagnostics</span>
+          </div>
+          <h1>Yet Another Sample Blog Post &emsp;<span class="date"></span></h1>
+          <p>Velit ut tortor pretium viverra suspendisse potenti nullam ac tortor. Nisi est sit amet facilisis magna etiam tempor. Venenatis urna cursus eget nunc scelerisque. Sem fringilla ut morbi tincidunt augue interdum. </p>
+          <p class="preview">Read More<i class="fa fa-angle-right" aria-hidden="true" style="margin-left: 10px;font-size: 14px;"></i></p>
+        </div></a>
+
+        <a href="/blog/sample" style="text-decoration: none;"><div class="block" data-date="2022-03-20">
+          <div class="tags">
+            <i class="fa fa-tag" aria-hidden="true" style="margin-right: 10px;color: #8F8F8F;font-size: 18px;transform: translate(0, 2px);"></i>
+            <span class="tag therapy">Therapeutics</span>
+          </div>
+          <h1>Can there possibly be a third one? &emsp;<span class="date"></span></h1>
+          <p>Augue neque gravida in fermentum et sollicitudin. Tortor condimentum lacinia quis vel eros donec ac. Turpis egestas maecenas pharetra convallis posuere morbi.</p>
+          <p class="preview">Read More<i class="fa fa-angle-right" aria-hidden="true" style="margin-left: 10px;font-size: 14px;"></i></p>
+        </div></a>
+      </div>
+    </div>
 
     <footer>
       <p>&#169;<span id="footer-current-year"></span>. A community project made with &#10084;&#65039; by <a href="https://www.mdplus.community">MDplus</a>. All rights reserved. <a href="/changelog">Changelog</a>.</p>
     </footer>
     <script type="text/javascript" src="{{ url_for('static', filename='styles/js/footer.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='styles/js/blog.js') }}"></script>
   </body>
 </html>

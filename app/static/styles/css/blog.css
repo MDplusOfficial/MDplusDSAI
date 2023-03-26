@@ -1,0 +1,73 @@
+:root {
+  --TAG: #C1C1C133;
+  --NAVY: #a4c3d2;
+  --GREEN: #afd1c0;
+  --ORANGE: #ffc095;
+  --PURPLE: #e6d1f2;
+  --YELLOW: #FFCB1E88;
+}
+
+.tag {
+  margin: 0 5px 10px 0;
+  position: relative;
+  display: inline-block;
+  color: var(--FONT-COLOR);
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 2px 8px;
+  background-color: var(--TAG);
+  border-radius: 6px;
+  transition: 0.1s all ease-in-out;
+}
+
+.tag.search {
+  cursor: pointer;
+}
+
+.tag.search.people:hover, .tag.search.people.active {
+  background-color: var(--NAVY);
+}
+
+.tag.search.vision:hover, .tag.search.vision.active {
+  background-color: var(--GREEN);
+}
+
+.tag.search.language:hover, .tag.search.language.active {
+  background-color: var(--ORANGE);
+}
+
+.tag.search.data:hover, .tag.search.data.active {
+  background-color: var(--PURPLE);
+}
+
+.tag.search.diagnostics:hover, .tag.search.diagnostics.active {
+  background-color: var(--YELLOW);
+}
+
+.tag.search.therapy:hover, .tag.search.therapy.active {
+  background-color: var(--BLUE);
+  color: var(--LIGHT-GRAY);
+}
+
+.tag.search.opinion:hover, .tag.search.opinion.active {
+  background-color: var(--INDIGO);
+  color: var(--LIGHT-GRAY);
+}
+
+.date {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6F6F6F;
+}
+
+.preview {
+  font-size: 13px !important;
+  letter-spacing: 0 !important;
+}
+
+@media screen and (min-width: 1068px) {
+  .body-container .right {
+    max-width: 20vw !important;
+    min-width: 20vw !important;
+  }
+}
