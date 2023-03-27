@@ -115,9 +115,9 @@ def blogpost(title):
     return render_template("blogposts/" + title + ".html")
 
 
-@app.route("/opportunities", methods=["GET"])
-def opportunities():
-    return render_template("opportunities.html")
+@app.route("/network", methods=["GET"])
+def network():
+    return render_template("network.html")
 
 
 @app.route("/datathon/<year>", methods=["GET"])

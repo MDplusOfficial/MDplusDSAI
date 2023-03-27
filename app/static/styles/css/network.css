@@ -1,0 +1,141 @@
+:root {
+  --TAG: #C1C1C133;
+  --BLUE: #3B79B8;
+  --GREEN: #6F9180;
+  --ORANGE: #DFA075;
+  --PURPLE: #A691B2;
+  --YELLOW: #DFAB0E;
+}
+
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: var(--INDIGO);
+}
+
+h2 {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 400;
+  color: var(--FONT-COLOR);
+  opacity: 0.5;
+}
+
+article {
+  width: 60%;
+  margin: 75px auto 0px auto;
+}
+
+@media screen and (max-width: 1068px) {
+  article {
+    width: 90%;
+  }
+}
+
+.buttons-container {
+  margin: 20px auto 30px auto;
+  text-align: center;
+}
+
+button {
+  color: var(--FONT-COLOR);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px 12px;
+  border-radius: 8px;
+  margin: 0 5px 8px 0;
+  outline: none;
+  border: 1px solid #D1D1D1;
+  cursor: pointer;
+  transition: 0.1s all ease-in-out;
+  background-color: var(--LIGHT-GRAY);
+}
+button:hover, button.active {
+  color: var(--WHITE);
+  border: 1px solid transparent;
+}
+button#all:hover, button#all.active { background-color: #8F8F8F; }
+button#data:hover, button#data.active { background-color: var(--BLUE); }
+button#ai:hover, button#ai.active { background-color: var(--GREEN); }
+button#academia:hover, button#academia.active { background-color: var(--PURPLE); }
+button#industry:hover, button#industry.active { background-color: var(--ORANGE); }
+button#students:hover, button#students.active { background-color: var(--YELLOW); }
+
+.person {
+  border: 2px solid #D1D1D1;
+  border-radius: 15px;
+  margin: 10px auto 15px auto;
+  display: grid;
+  grid-template-columns: 110px auto;
+  grid-gap: 10px;
+}
+
+img.headshot {
+  width: 90px;
+  border: 1px solid #D1D1D1;
+  border-radius: 45px;
+  margin: 10px;
+}
+
+h3 {
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: var(--INDIGO);
+  margin: 10px 10px 5px 0;
+  padding: 0;
+}
+
+p {
+  letter-spacing: 0.5px;
+  color: var(--FONT-COLOR);
+  margin: 10px 10px 10px 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  .person {
+    display: block;
+    text-align: center;
+  }
+
+  img.headshot {
+    margin-bottom: 0;
+  }
+
+  h3, p {
+    margin: 10px;
+  }
+}
+
+.description i {
+  color: #8F8F8F;
+  font-size: 20px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.fa-chrome:hover {
+  background: 
+    linear-gradient(to bottom left, transparent 49%,#ea4335 50%) 105% 0%  /37% 30%,
+    linear-gradient(to bottom right,transparent 49%,#fbbc05 50%) 64% 100% /35% 43%,
+   
+    radial-gradient(farthest-side, #4285f4 46%,transparent 47%),
+    linear-gradient( 47deg,        #34a853 42%,transparent 43%),
+    linear-gradient(-72deg,        #fbbc05 42%,transparent 43%),
+    linear-gradient(-199deg,       #ea4335 42%,transparent 43%);
+  background-repeat:no-repeat;
+  color: transparent !important;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.fa-envelope-o:hover {
+  color: var(--INDIGO);
+}
