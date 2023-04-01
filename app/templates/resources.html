@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/mdplus-logo.png') }}" />
     <link rel="apple-touch-icon" type="image/png" href="{{ url_for('static', filename='images/mdplus-logo.png') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/global.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/index.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/resources.css') }}" />
   </head>
   <body>
@@ -20,10 +21,113 @@
       <a href="/datathon/2023">Datathon</a>
     </nav>
 
+    <div class="body-container">
+      <div class="right">
+        <h1><i class="fa fa-folder-open" aria-hidden="true"></i> <span onclick="toggleModule(this);" data-link="introduction" class="clickable">Table of Contents</span></h1>
+        <hr style="border: 1px solid #E8E8E8;margin: 10px auto 15px auto;" />
+
+        <h2><i class="fa fa-video-camera" aria-hidden="true"></i> Live Events</h2>
+        <ul>
+          <li onclick="toggleModule(this);" data-link="live-events-upcoming">Upcoming</li>
+          <li onclick="toggleModule(this);" data-link="live-events-recordings">Recordings</li>
+        </ul>
+
+        <h2><i class="fa fa-code" aria-hidden="true"></i> Programming Tutorials</h2>
+        <ul>
+          <li onclick="toggleModule(this);" data-link="python">Python</li>
+          <li onclick="toggleModule(this);" data-link="r">R</li>
+        </ul>
+
+        <h2><i class="fa fa-desktop" aria-hidden="true"></i> AI Tutorials</h2>
+        <ul>
+          <li onclick="toggleModule(this);" data-link="ai-beginner">Beginner</li>
+          <li onclick="toggleModule(this);" data-link="ai-intermediate">Intermediate</li>
+          <li onclick="toggleModule(this);" data-link="ai-advanced">Advanced</li>
+        </ul>
+
+        <h2><i class="fa fa-table" aria-hidden="true"></i> Data Science Tutorials</h2>
+        <ul>
+          <li onclick="toggleModule(this);" data-link="ds-beginner">Beginner</li>
+          <li onclick="toggleModule(this);" data-link="ds-intermediate">Intermediate</li>
+          <li onclick="toggleModule(this);" data-link="ds-advanced">Advanced</li>
+        </ul>
+
+        <h2><i class="fa fa-podcast" aria-hidden="true"></i> Media</h2>
+        <ul>
+          <li onclick="toggleModule(this);" data-link="media">All Media</li>
+        </ul>
+      </div>
+
+      <div class="left">
+        <div class="module" id="introduction">
+          <h1>MD+ Data Science and AI Community Resources</h1>
+          <p>Welcome to the MD+ resources page! The MD+ community has curated a set of online resources that members have found helpful for learning data science and AI. Whether you&apos;re a physician interested in learning how AI-assisted tools might impact your clinical practice or a student interested in using and building applications yourself, our curated resource list has something for everyone and is updated weekly.</p>
+
+          <p>Have feedback on linked resources or want to suggest others? We&apos;d love to hear your thoughts via <a href="mailto:michael@mdplusplus.org">email</a> or using this anonymous <a href="https://forms.gle/yU7FWYEATdkjSYWg7" target="_blank">Google form</a>.</p>
+        </div>
+
+        <div class="module" id="live-events-upcoming">
+          <h1>Upcoming Live Events</h1>
+          <p>Include upcoming live events here.</p>
+        </div>
+
+        <div class="module" id="live-events-recordings">
+          <h1>Live Event Recordings</h1>
+          <p>Include recorded live events here.</p>
+        </div>
+
+        <div class="module" id="python">
+          <h1>Python Resources</h1>
+          <p>Include Python resources here.</p>
+        </div>
+
+        <div class="module" id="r">
+          <h1>R Resources</h1>
+          <p>Include R resources here.</p>
+        </div>
+
+        <div class="module" id="ai-beginner">
+          <h1>AI Tutorials <i class="fa fa-angle-right"></i> Beginner</h1>
+          <p>Include beginner AI resources here.</p>
+        </div>
+
+        <div class="module" id="ai-intermediate">
+          <h1>AI Tutorials <i class="fa fa-angle-right"></i> Intermediate</h1>
+          <p>Include intermediate AI resources here.</p>
+        </div>
+
+        <div class="module" id="ai-advanced">
+          <h1>AI Tutorials <i class="fa fa-angle-right"></i> Advanced</h1>
+          <p>Include advanced AI resources here.</p>
+        </div>
+
+        <div class="module" id="ds-beginner">
+          <h1>Data Science Tutorials <i class="fa fa-angle-right"></i> Beginner</h1>
+          <p>Include beginner DS resources here.</p>
+        </div>
+
+        <div class="module" id="ds-intermediate">
+          <h1>Data Science Tutorials <i class="fa fa-angle-right"></i> Intermediate</h1>
+          <p>Include intermediate DS resources here.</p>
+        </div>
+
+        <div class="module" id="ds-advanced">
+          <h1>Data Science Tutorials <i class="fa fa-angle-right"></i> Advanced</h1>
+          <p>Include advanced DS resources here.</p>
+        </div>
+
+        <div class="module" id="media">
+          <h1>Podcasts</h1>
+          <h1>Newletters</h1>
+          <h1>Twitter Feeds</h1>
+        </div>
+      </div>
+    </div>
 
     <footer>
       <p>&#169;<span id="footer-current-year"></span>. A community project made with &#10084;&#65039; by <a href="https://www.mdplus.community">MDplus</a>. All rights reserved. <a href="/changelog">Changelog</a>.</p>
     </footer>
     <script type="text/javascript" src="{{ url_for('static', filename='styles/js/footer.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='styles/js/resources.js') }}"></script>
   </body>
 </html>

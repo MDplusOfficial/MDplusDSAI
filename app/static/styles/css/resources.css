@@ -1,0 +1,114 @@
+.right {
+  min-width: 20vw !important;
+  max-width: 20vw !important;
+}
+
+@media screen and (max-width: 1068px) {
+  .right {
+    width: 90% !important;
+    max-width: 90% !important;
+    min-width: 90% !important;
+  }
+  .module {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 2192px) {
+  .body-container {
+    width: 60% !important;
+  }
+}
+
+h1 i {
+  font-size: 24px !important;
+  margin: 0 15px 0 0;
+  color: #8F8F8F;
+  transform: translate(0, 3px);
+}
+
+h2 {
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 10px 0 0 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+  color: var(--INDIGO);
+  opacity: 0.7;
+}
+
+h2 i {
+  font-size: 16px !important;
+  margin: 0 10px 0 15px;
+  transform: translate(0, 1px);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  padding: 0 0 0 calc(15px + 16px + 15px) !important;
+  margin: 5px 0 0 0 !important;
+  color: var(--FONT-COLOR);
+  opacity: 0.7;
+  font-size: 13px;
+  line-height: 1.25;
+  margin: 10px 0 0 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+}
+
+li:hover, li.active {
+  text-decoration: underline;
+}
+
+.module h1 {
+  margin: 10px 0 20px 0;
+  padding: 0;
+  letter-spacing: 1px;
+  font-size: 24px;
+  color: var(--INDIGO);
+}
+
+.module h2 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  letter-spacing: 1px;
+  font-size: 18px;
+  color: var(--INDIGO);
+}
+
+.module hr {
+  border: 1px solid var(--INDIGO);
+  opacity: 0.25;
+  margin: 0 auto 15px 0;
+}
+
+.module p {
+  margin: 0 0 10px 0;
+  padding: 0;
+  color: #4F4F4F;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.module a {
+  color: var(--BLUE);
+}
+
+.module i {
+  transform: none;
+  margin: 0 5px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  text-decoration: underline;
+}
