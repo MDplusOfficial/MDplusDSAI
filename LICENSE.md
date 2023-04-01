@@ -1,4 +1,6 @@
-MIT License
+All of the photos, images, and blog text contained within this project have been made available to this project by their original sources and are copyrighted; any other use must be authorized by the photographer, artist, or writer that holds all the rights for those media.
+
+Any other file of this project is available under the MIT License as follows:
 
 Copyright (c) MDplus and its affiliates.
 

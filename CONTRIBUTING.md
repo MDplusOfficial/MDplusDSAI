@@ -21,4 +21,4 @@ Please reach out to [Michael Yao](mailto:michael@mdplusplus.org) with any questi
 
 # License
 
-By contributing to MDplus DS&AI, you agree that your contributions will be licensed under the [LICENSE](/LICENSE.md) file in the root directoy of this source tree.
+By contributing to MDplus DS&AI, you agree that your contributions will be licensed under the [LICENSE](/LICENSE.md) file in the root directory of this source tree.
