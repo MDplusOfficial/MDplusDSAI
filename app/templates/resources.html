@@ -41,14 +41,12 @@
         <h2><i class="fa fa-desktop" aria-hidden="true"></i> AI Tutorials</h2>
         <ul>
           <li onclick="toggleModule(this);" data-link="ai-beginner">Beginner</li>
-          <li onclick="toggleModule(this);" data-link="ai-intermediate">Intermediate</li>
           <li onclick="toggleModule(this);" data-link="ai-advanced">Advanced</li>
         </ul>
 
         <h2><i class="fa fa-table" aria-hidden="true"></i> Data Science Tutorials</h2>
         <ul>
           <li onclick="toggleModule(this);" data-link="ds-beginner">Beginner</li>
-          <li onclick="toggleModule(this);" data-link="ds-intermediate">Intermediate</li>
           <li onclick="toggleModule(this);" data-link="ds-advanced">Advanced</li>
         </ul>
 
@@ -59,7 +57,7 @@
       </div>
 
       <div class="left">
-        <div class="module" id="introduction">
+        <div class="module" id="introduction" style="display: block;">
           <h1>MD+ Data Science and AI Community Resources</h1>
           <p>Welcome to the MD+ resources page! The MD+ community has curated a set of online resources that members have found helpful for learning data science and AI. Whether you&apos;re a physician interested in learning how AI-assisted tools might impact your clinical practice or a student interested in using and building applications yourself, our curated resource list has something for everyone and is updated weekly.</p>
 
@@ -68,58 +66,129 @@
 
         <div class="module" id="live-events-upcoming">
           <h1>Upcoming Live Events</h1>
-          <p>Include upcoming live events here.</p>
+          <p>Coming soon! Keep an eye on this page and our Slack channels <tt>#ai-med</tt> and <tt>#datascience-med</tt>.</p>
         </div>
 
         <div class="module" id="live-events-recordings">
           <h1>Live Event Recordings</h1>
-          <p>Include recorded live events here.</p>
+          <p>Coming soon! Keep an eye on this page and our Slack channels <tt>#ai-med</tt> and <tt>#datascience-med</tt>.</p>
         </div>
 
         <div class="module" id="python">
           <h1>Python Resources</h1>
-          <p>Include Python resources here.</p>
+          <p>Python is a beginner-friendly programming language used for virtually all data science and AI. If you&apos;re interested in learning how to build data science and AI applications and develop fundamental programming skills for research and data parsing, check out some of the resources below!</p>
+
+          <a href="https://bebi103a.github.io/index.html" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 30px;">BE/Bi 103a</h2></a>
+          <p>BE/Bi 103a is a fast-paced college-level programming course taught by <a href="http://bois.caltech.edu" target="_blank">Justin Bois</a> at Caltech that assumes <b>no background knowledge</b> on how Python work, and teaches students how to work with biological data using Python.</p>
+
+          <a href="https://colab.research.google.com/drive/1eij5s6YoSthXUAWMUJ0-ouydIFK0D_1d?usp=sharing" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 20px;">MedML@Emory Workshop</h2></a>
+          <p>This notebook is a quick-and-dirty tutoral to Python and machine learning from Srinidhi Bharadwaj from the MedML club at Emory. By the end of the tutorial, you&apos;ll be able build a program that analyzes ECGs!</p>
+
+          <a href="https://cs231n.github.io/python-numpy-tutorial/" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 20px;">Stanford Python Tutorial</h2></a>
+          <p>Put together by <a href="https://web.eecs.umich.edu/~justincj/" target="_blank">Justin Johnson</a> while at Stanford, this course is particularly notable for introducing students to essential Python packages and toolkits like <tt>NumPy</tt>, <tt>SciPy</tt>, and <tt>matplotlib</tt> that anyone working in ML will undoubtedly come across.</p>
         </div>
 
         <div class="module" id="r">
           <h1>R Resources</h1>
-          <p>Include R resources here.</p>
+          <p>R is a programming language commonly used by the biostatistics, data science, and clinical research communities.</p>
+
+          <a href="https://education.rstudio.com/learn/beginner/" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 30px;">Intro to R</h2></a>
+          <p>This blog post written by the developers of R features links to a bunch of helpful resources and guides for getting started with R.</p>
         </div>
 
         <div class="module" id="ai-beginner">
           <h1>AI Tutorials <i class="fa fa-angle-right"></i> Beginner</h1>
-          <p>Include beginner AI resources here.</p>
-        </div>
+          <p>For MD+ members interested in exploring how AI will impact clinical medicine and other sectors from a macro lens.</p>
 
-        <div class="module" id="ai-intermediate">
-          <h1>AI Tutorials <i class="fa fa-angle-right"></i> Intermediate</h1>
-          <p>Include intermediate AI resources here.</p>
+          <a href="https://ocw.mit.edu/courses/6-s897-machine-learning-for-healthcare-spring-2019/video_galleries/lecture-videos/" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 30px;">MIT Course: ML for Healthcare</h2></a>
+          <p>This a great lecture series by professors at MIT giving a broad overview of the field of ML for healthcare, discussing everything from clinical datasets to NLP, disease prediction, and model robustness.</p>
+
+          <a href="https://www.coursera.org/learn/ai-for-everyone" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 20px;">AI for Everyone</h2></a>
+          <p>This Coursera course is taught by <a href="https://www.andrewng.org" target="_blank">Andrew Ng</a>, one of the leading experts on AI research. This short 10-hour course introduces AI and its potential impacts on society and business intended for a non-technical audience.</p>
+
+          <a href="https://www.kaggle.com/code/shrutimechlearn/step-by-step-diabetes-classification-knn-detailed" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 20px;">Kaggle Diabetes Classification Tutorial</h2></a>
+          <p>For those with some Python experience, this notebook provides a comprehensive walkthrough on how to train baseline models for disease diagnosis from scratch. All the code and data is provided alongisde detailed explainations and expected results.</p>
+
+          <a href="https://www.nature.com/articles/s41746-020-00333-z" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 20px;">NPJ AI and Medicine Perspective</h2></a>
+          <p>Mesk&oacute; and G&ouml;r&ouml;g provide an excellent overview article on the state of AI and medicine from 2020 that can be easily read without the need for a technical background.</p>
         </div>
 
         <div class="module" id="ai-advanced">
           <h1>AI Tutorials <i class="fa fa-angle-right"></i> Advanced</h1>
-          <p>Include advanced AI resources here.</p>
+          <p>For MD+ members with a working Python foundation and want to dive into the technical aspects of AI to build and deploy their own models down the road.</p>
+
+          <a href="https://pll.harvard.edu/course/cs50s-introduction-artificial-intelligence-python?delta=0" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 30px;">CS50: Intro to AI</h2></a>
+          <p>This AI introductory course from Harvard is an in-depth, challenging course that teaches students how to build AI tools from the ground up using Python.</p>
+
+          <a href="https://huggingface.co/course/chapter1/1" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 20px;"><span style="opacity: 1 !important;">&#129303;</span> Hugging Face NLP Course</h2></a>
+          <p>For those interested in building their own LLMs and learning NLP from 0-to-100, Hugging Face&apos;s NLP intro course is an excellent starting point.</p>
+
+          <a href="https://huggingface.co/docs/diffusers/index" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 20px;"><span style="opacity: 1 !important;">&#129303;</span> Hugging Face Diffusers</h2></a>
+          <p>Hugging Face also provides great documentation for building generative diffusion models. Lilian Weng also provides an excellent overview on diffusion models from a technical standpoint in her blog post <a href="https://lilianweng.github.io/posts/2021-07-11-diffusion-models/" target="_blank">here</a>.</p>
+
+          <a href="https://github.com/Project-MONAI/tutorials" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 20px;">Project MONAI Tutorials</h2></a>
+          <p><a href="https://monai.io" target="_blank">MONAI</a> is an open-source framework archive for ML development in medical imaging. Their Github repository features great tutorials on training models to classify and segment real medical images.</p>
         </div>
 
         <div class="module" id="ds-beginner">
           <h1>Data Science Tutorials <i class="fa fa-angle-right"></i> Beginner</h1>
-          <p>Include beginner DS resources here.</p>
-        </div>
+          <p>For MD+ members interested in learning about the opportunities and challenges with data science applications in clinical medicine.</p>
 
-        <div class="module" id="ds-intermediate">
-          <h1>Data Science Tutorials <i class="fa fa-angle-right"></i> Intermediate</h1>
-          <p>Include intermediate DS resources here.</p>
+          <p>Coming soon!</p>
         </div>
 
         <div class="module" id="ds-advanced">
           <h1>Data Science Tutorials <i class="fa fa-angle-right"></i> Advanced</h1>
-          <p>Include advanced DS resources here.</p>
+          <p>These resources are intended for MD+ members interested in diving into their own healthcare datasets headfirst while developing the technical skillset to extract key insights in the process.</p>
+
+          <a href="https://www.codecademy.com/catalog/subject/data-science" target="_blank" style="text-decoration: none;"><h2 class="clickable" style="margin-top: 30px;">Codecademy Data Science Foundations</h2></a>
+          <p>For those with an interest in learning to use Python for data science, check out this comprehensive tutorial from Codecademy! It even features a portfolio project that teaches you how to parse through US medical insurance data from scratch.</p>
         </div>
 
         <div class="module" id="media">
-          <h1>Podcasts</h1>
-          <h1>Newletters</h1>
-          <h1>Twitter Feeds</h1>
+          <h1 style="margin-bottom: 5px;">Podcasts</h1>
+          <hr />
+
+          <a href="https://ai-podcast.nejm.org" target="_blank" style="text-decoration: none;"><h2 class="clickable">NEJM AI Grand Rounds</h2></a>
+          <p>NEJM AI Ground Rounds is a monthly podcast that features insightful conversations with experts at the intersection of AI and medicine. A great listen for both students and clinicians.</p>
+
+          <a href="https://amia.org/news-publications/podcasts/for-your-informatics" target="_blank" style="text-decoration: none;"><h2 class="clickable">For Your Informatics (FYI)</h2></a>
+          <p>FYI is a podcast run by the American Medical Informatics Association (AMIA) and discusses the AI and medicine from clinical, research, and societal perspectives.</p>
+
+          <a href="" target="_blank" style="text-decoration: none;margin-top: 20px;"><h2 class="clickable"></h2></a>
+
+          <h1 style="margin-bottom: 5px;margin-top: 25px;">Newletters and Blogs</h1>
+          <hr />
+
+          <a href="https://glassboxmedicine.com" target="_blank" style="text-decoration: none;"><h2 class="clickable">Glass Box</h2></a>
+          <p>Glass Box is a ML+medicine blog run by Dr. <a href="https://twitter.com/racheldraelos?lang=en" target="_blank">Rachel Draelos</a>, CEO of <a href="https://www.cydoc.ai" target="_blank">Cydoc</a> and Duke MD-PhD graduate with a doctorate in computer science. Glass Box covers everything from the fundamentals of medicine to how AI tools can be used to augment patient care.</p>
+
+          <a href="https://decodingbio.substack.com" target="_blank" style="text-decoration: none;margin-top: 20px;"><h2 class="clickable">Decoding Bio</h2></a>
+          <p>Decoding Bio is a Substack by Dr. <a href="https://twitter.com/patricksmalone" target="_blank">Patrick Malone</a>, a physician-scientist investor at KdT Ventures (and MD+ community member!)</p>
+
+          <a href="https://doctorpenguin.com/index" target="_blank" style="text-decoration: none;margin-top: 20px;"><h2 class="clickable">Doctor Penguin</h2></a>
+          <p>Doctor Penguin is a must-read weekly newletter sharing up-and-coming research showcasing applications of AI in different clinical specialties.</p>
+
+          <a href="https://jack-clark.net" target="_blank" style="text-decoration: none;margin-top: 20px;"><h2 class="clickable">Import AI</h2></a>
+          <p>Import AI is a weekly newsletter on AI primarily intended for AI researchers. While you won&apos;t necessarily find a focus on ML and medicine, <a href="https://twitter.com/jackclarksf" target="_blank">Jack Clark</a> does a great job distilling new research advancements in AI.</p>
+
+          <h1 style="margin-bottom: 5px;margin-top: 25px;">Twitter Feeds</h1>
+          <hr />
+
+          <a href="https://twitter.com/RoxanaDaneshjou" target="_blank" style="text-decoration: none;"><h2 class="clickable">@RoxanaDaneshjou</h2></a>
+          <p>Dr. Roxana Daneshjou is a Stanford dermatologist working at the intersection of AI and precision health.</p>
+
+          <a href="https://twitter.com/james_y_zou" target="_blank" style="text-decoration: none;margin-top: 20px;"><h2 class="clickable">@james_y_zou</h2></a>
+          <p>For members interested in learning about AI for biotech and healthcare from a research perspective, check out Professor James Zou&apos;s work!</p>
+
+          <a href="https://twitter.com/dereckwpaul" target="_blank" style="text-decoration: none;margin-top: 20px;"><h2 class="clickable">@dereckwpaul</h2></a>
+          <p>Dr. Dereck Paul is a physician turned CEO of <a href="https://twitter.com/GlassHealthHQ" target="_blank">Glass Health</a> building LLM-empowered tools for clinician workflows and documentation.</p>
+
+          <a href="https://twitter.com/Laparoscopes" target="_blank" style="text-decoration: none;margin-top: 20px;"><h2 class="clickable">@Laparoscopes</h2></a>
+          <p>Dr. Dan Hashimoto is a general surgeon at the University of Pennsylvania applying computer vision to surgical videos and sharing helpful resources for both trainees and physicians.</p>
+
+          <a href="https://twitter.com/suchisaria" target="_blank" style="text-decoration: none;margin-top: 20px;"><h2 class="clickable">@suchisaria</h2></a>
+          <p>Professor Suchi Saria is a professor of AI at Johns Hopkins and experienced builder and founder in ML+medicine.</p>
         </div>
       </div>
     </div>

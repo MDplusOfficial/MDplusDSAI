@@ -66,6 +66,10 @@ li:hover, li.active {
   text-decoration: underline;
 }
 
+.module {
+  display: none;
+}
+
 .module h1 {
   margin: 10px 0 20px 0;
   padding: 0;
