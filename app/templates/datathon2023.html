@@ -10,6 +10,7 @@
     <link rel="apple-touch-icon" type="image/png" href="{{ url_for('static', filename='images/mdplus-logo.png') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/global.css') }}" />
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/index.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/css/datathon.css') }}" />
   </head>
   <body>
     <a href="/"><img src="{{ url_for('static', filename='images/mdplus-logo.png') }}" alt="MDplus Logo" class="logo"/></a>
@@ -20,11 +21,57 @@
       <a href="/datathon/2023" class="active">Datathon</a>
     </nav>
 
-    <p style="text-align: center;margin-top: 100px;">More info coming soon! Read more about last year&apos;s <a href="https://medium.com/mdplus/inaugural-md-datathon-2022-4947b28b2181" target="_blank" style="color: var(--BLUE);">inaugural Datathon</a>.</p>
+
+    <h1 id="title"><span style="color: #3B79B8;">MD</span><span style="color: #F7CD4C;">plus</span>&ensp;<span id="terminal"></span><span id="console">&#95;</span></h1>
+    <h2>Introduction</h2>
+    <p class="info">Welcome to the <b>2023 MDplus Datathon</b>! The datathon is a chance for you to be able work with medical students, graduate students, and healthcare workers from all backgrounds to derive data-driven insights and innovate solutions that advance patient care. In the process, you&apos;ll have the chance to think and learn about complex healthcare problems and what you can do to tackle them.</p>
+    <p class="info">The theme of this year&apos; datathon is <b>value-based care</b>. Your goal is to work in teams of 3-5 people to explore a common dataset with the purpose of answering a question or innovating a solution in alignment with this theme. The top submissions will receive exciting prizes (to be announced!)</p>
+
+    <h2>Logistics</h2>
+    <p class="info">The 2023 MDplus Datathon runs from <b>October 25, 2023</b> to <b>November 15, 2023</b>. Participating teams will use quantitative analyses (e.g. visualization, statistics, and other computational tools) to form clinical insights and contextualize them into actionable proposals for relevant stakeholders. As part of the datathon, participants will be invited to attend (optional) workshops and private events with sponsors (i.e., Python/R bootcamps, oral presentation workshops, fireside chats, etc.).</p>
+
+    <h2>Signup with a Team or Individually</h2>
+    <p class="info">Interested in signing up for the datathon? Fill out the Google Form below (also linked <a href="https://forms.gle/KPKtyjt4jxGtuTQi6" target="_blank">here</a>).</p>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf8nTMtpl1Sscd0f579XibI01gnR0DcodAW5icUa0MAXRYj6w/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+    <h2>Tutorials</h2>
+    <h3>Downloading and Overview of the MIMIC-IV Dataset</h3>
+    <p class="info"><a href="#" target="_blank">10-Minute Video</a></p>
+    <h3>Introduction to Python</h3>
+    <p class="info"><a href="#" target="_blank">30-Minute Video</a> &ensp;|&ensp; <a href="#" target="_blank">Written Tutorial</a> &ensp;|&ensp; <a href="#" target="_blank">Download Example Code</a></p>
+    <h3>Introduction to R</h3>
+    <p class="info"><a href="#" target="_blank">30-Minute Video</a> &ensp;|&ensp; <a href="#" target="_blank">Written Tutorial</a> &ensp;|&ensp; <a href="#" target="_blank">Download Example Code</a></p>
+    <h3>Introduction to MIMIC-IV: Python</h3>
+    <p class="info"><a href="#" target="_blank">30-Minute Video</a> &ensp;|&ensp; <a href="#" target="_blank">Written Tutorial</a> &ensp;|&ensp; <a href="#" target="_blank">Download Example Code</a></p>
+    <h3>Introduction to MIMIC-IV: R</h3>
+    <p class="info"><a href="#" target="_blank">30-Minute Video</a> &ensp;|&ensp; <a href="#" target="_blank">Written Tutorial</a> &ensp;|&ensp; <a href="#" target="_blank">Download Example Code</a></p>
+
+    <h2>Workshop Schedule</h2>
+    <p class="info">Coming soon!</p>
+
+    <h2>Meet the Judges</h2>
+    <p class="info">Coming soon!</p>
+
+    <h2>FAQs</h2>
+    <h3>I have little/no data science or computational experience. Can I still participate?</h3>
+    <p class="info">Absolutely! Learning the computational tools is half the fun of the event. Participants will have access to tutorials walking through the basics of Python and R, and also how to go about analyzing the dataset. Datathon submissions are also judged on more than just technical complexity. In fact, datathon judges care more about the insights derived and the data analysis than the computational novelty or complexity of the project!</p>
+
+    <h3>What will we actually be doing?</h3>
+    <p class="info">Students will be provided a dataset (e.g., claims and hospital data) and are then asked to <b class="purple">identify an addressible problem</b> (e.g., understanding the impact of hospital quality metrics on spending) to <b class="purple">explore through analyzing the dataset</b> (e.g., an observational study comparing high- vs. low- quality hospitals, an interpretable ML model predicting spending rates depending on hospital attributes and outcomes, etc.) to <b class="purple">create an actionable recommendation</b> (e.g., quality metrics should be indexed by spending, and efforts to deliver high quality care will result in more value-based spending habits).</p>
+
+    <h3>I don&apos;t have the best laptop for data analysis... Can I still participate?</h3>
+    <p class="info">Yes! We&apos;ve partnered with <a href="https://huggingface.co" style="font-weight: 600;" target="_blank">Hugging Face</a> &#129303; to bring you <b class="purple">free</b> access to powerful computational resources dedicated to the event. To get started, join our MDplus Hugging Face community <a href="#" target="_blank" style="font-weight: 600;">here</a>.</p>
+
+    <h3>What&apos;s the time commitment look like?</h3>
+    <p class="info">It&apos;s flexible and depending on your group and project!</p>
+
+    <h3>I have additional questions? Who can I reach out to?</h3>
+    <p class="info">Send us an email or DM us via Slack! The best folks to reach out are the co-directors of data science and AI, <b class="purple">Eric Shan</b> (<a href="mailto:eric@mdplusplus.org">email</a>) and <b class="purple">Michael Yao</b> (<a href="mailto:michael@mdplusplus.org">email</a>). We&apos;re happy to answer any questions from signing up for the datathon to technical questions during the event.</p>
 
     <footer>
       <p>&#169;<span id="footer-current-year"></span>. A community project made with &#10084;&#65039; by <a href="https://www.mdplus.community">MDplus</a>. All rights reserved. <a href="/changelog">Changelog</a>.</p>
     </footer>
     <script type="text/javascript" src="{{ url_for('static', filename='styles/js/footer.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='styles/js/datathon.js') }}"></script>
   </body>
 </html>
