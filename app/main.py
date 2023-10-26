@@ -122,7 +122,10 @@ def network():
 
 @app.route("/datathon/<year>", methods=["GET"])
 def datathon(year):
-    return render_template("datathon" + str(year) + ".html")
+    if str(year).isdigit():
+        return render_template("datathon" + str(year) + ".html")
+    elif str(year) == "r":
+        return render_template("r_workshop_1.html")
 
 
 def error_handler(e):
