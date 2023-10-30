@@ -124,8 +124,10 @@ def network():
 def datathon(year):
     if str(year).isdigit():
         return render_template("datathon" + str(year) + ".html")
-    elif str(year) == "r":
+    elif str(year).lower() == "r":
         return render_template("r_workshop_1.html")
+    elif str(year).lower() == "python":
+        return render_template("python_workshop_1.html")
 
 
 def error_handler(e):

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="/static/styles/r_workshop_1_files/libs/clipboard/clipboard.min.js"></script>
+<script src="{{ url_for('static', filename='styles/r_workshop_1_files/libs/quarto-html/tabby.min.js') }}"></script>
+<script src="{{ url_for('static', filename='styles/r_workshop_1_files/libs/quarto-html/popper.min.js') }}"></script>
+<script src="{{ url_for('static', filename='styles/r_workshop_1_files/libs/quarto-html/tippy.umd.min.js') }}"></script>
+<link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/quarto-html/tippy.css') }}" rel="stylesheet">
+<link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/quarto-html/quarto-html.min.css') }}" rel="stylesheet" data-mode="light">
+<link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/quarto-html/quarto-syntax-highlighting.css') }}" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.2.269">
+  <meta name="author" content="Michael Yao">
+  <title>Introduction to Python for Medical Students</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/dist/reset.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/dist/reveal.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/dist/theme/quarto.css') }}" id="theme">
+  <link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/plugin/reveal-menu/menu.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/plugin/reveal-chalkboard/style.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/r_workshop_1_files/libs/revealjs/plugin/quarto-support/footer.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='styles/css/python.css') }}" rel="stylesheet" >
+  <img src="https://www.med.upenn.edu/images/psom_logo_blue.svg" alt="Perelman School of Medicine at the University of Pennsylvania" width="213" height="60" style="margin: 20px 0 0 20px;" />
+</head>
+<body class="quarto-light" style="background-color: #f1f1f1;">
+  <div class="reveal">
+    <div class="slides">
+
+      <section id="title-slide" data-background-size="contain" class="quarto-title-block center">
+        <h1 class="title">Introduction to Python for Medical Students</h1>
+        <p class="subtitle"></p><p><strong><span style="color: #990000;font-family: -apple-system, BlinkMacSystemFont, sans-serif;">A Practical Primer</span></strong></p>
+        <p><a href="https://www.michaelsyao.com" style="color: #011F5B;font-family: -apple-system, BlinkMacSystemFont, sans-serif;">Michael Yao</a></p><p></p>
+        <div class="quarto-title-authors"></div>
+        <p class="date" style="font-family: -apple-system, BlinkMacSystemFont, sans-serif;font-size: 28px;">10/30/23</p>
+      </section>
+
+      <section id="objectives" class="slide level2">
+        <h2>Objectives</h2>
+        <ul>
+          <li><p>Download and install Python 3 on your computer</p></li>
+          <li><p>Be able to take <strong>input data</strong> and generate <strong>output results</strong> using Python</p></li>
+          <ul>
+            <li><p>Be able to import modules libraries and load data</p></li>
+            <li><p>Know what an array and dataframe are</p></li>
+            <li><p>Understand what a function is and how common functions work</p></li>
+            <li><p>Learn data wrangling basics</p></li>
+          </ul>
+        </ul>
+      </section>
+
+      <section id="installation" class="slide level2">
+        <h2>Installing Python</h2>
+        <ul>
+          <li><p>Download Python at <a href="https://www.python.org/downloads/" target="_blank">python.org/downloads</a></p></li>
+          <li><p>Download Visual Studio Code at <a href="https://code.visualstudio.com/download" target="_blank">code.visualstudio.com/download</a></p></li>
+          <ul>
+            <li><p>Visual Studio Code (VS Code) is an Integrated Development Environment (IDE), which provides a visual and interactive interface to make coding in Python easier</p></li>
+            <li><p>Python is the <strong>programming language</strong> that we can use to explore datasets</li>
+          </ul>
+        </ul>
+      </section>
+
+      <section id="vscode" class="slide level2">
+        <h2>Visual Studio Code (VS Code)</h2>
+        <img data-src="/static/images/python_/vscode.png" class="quarto-figure-center" style="height: 55vh !important;margin: 0 auto;display: block;" />
+      </section>
+
+      <section id="packages" class="slide level2">
+        <h2>Packages</h2>
+        <ul>
+          <li><p>The power of Python is being open source</p></li>
+          <li><p><code>pip install package_name</code> installs a package for the first time (only need to do once)</p></li>
+          <ul>
+            <li><p>For this session, go to the terminal and run <code>pip install numpy&#9166;</code> and <code>pip install pandas&#9166;</code> in your console</p></li>
+          </ul>
+          <li><p><code>import numpy as np</code> and <code>import pandas as pd</code> loads these packages into your <code>.py</code> program</p></li>
+        </ul>
+      </section>
+
+      <section id="high-yield-basic-concepts" class="slide level2">
+        <h2>High Yield Basic Concepts</h2>
+        <ul>
+          <li><p><strong>Assignment:</strong> assign a value to a variable name (e.g.&nbsp;<code>x = 10</code> )</p></li>
+          <ul>
+            <li>Note: your name shouldn’t have spaces. Instead use <code>snake_case</code> or <code>camelCase</code></li>
+          </ul>
+          <li><p><strong>Functions:</strong> your “action verbs”, which take in input argument and return output (e.g.&nbsp;<code>mean()</code>)</p></li>
+          <li><p><strong>Comments:</strong> helpful statements to help you and others better understand your code, but are not executed. (e.g.&nbsp;<code> # This is a comment!</code> )</p></li>
+        </ul>
+      </section>
+
+      <section id="a-little-more-about-functions" class="slide level2" style="color: #011F5B;font-family: -apple-system, BlinkMacSystemFont, sans-serif;letter-spacing: 1px;">
+        <h2 style="font-family: -apple-system, BlinkMacSystemFont, sans-serif;letter-spacing: 2px;">A Little More About Functions</h2>
+        <div class="cell">
+          <div class="sourceCode cell-code" id="cb1">
+            <pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a>x <span class="ot">=</span> [<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>]</span><br /><span id="cb1-2"><a href="#cb1-2"></a><span class="fu">print</span>(<span class="fu">sum</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+          </div>
+          <div class="cell-output cell-output-stdout">
+            <pre><code>12</code></pre>
+          </div>
+        </div>
+        <p>This is how to write your own function:</p>
+        <ul>
+          <li><p>syntax: <code>def function_name(arguments):</code></p></li>
+          <li><p><code>arguments</code>: what you pass in as inputs</p></li>
+        </ul>
+        <div class="cell">
+          <div class="sourceCode cell-code" id="cb3">
+            <pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="ot">=</span> [<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>]</span><br /><span id="cb3-2"><a href="#cb3-2"></a>def mean(arr):</span><br /><span id="cb3-3"><a href="#cb3-3"></a>    <span class="co"># arr is an argument</span></span><br /><span id="cb3-4"><a href="#cb3-4"></a>    return <span class="fu">sum</span>(arr) <span class="sc">/</span> <span class="fu">len</span>(arr)</span><br /><span id="cb3-5"><a href="#cb3-5"></a><span class="fu">print</span>(<span class="fu">mean</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+          </div>
+          <div class="cell-output cell-output-stdout">
+            <pre><code>4</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="vectors" class="slide level2">
+        <h2>Arrays</h2>
+        <ul>
+          <li><p>Basic data structure in R</p></li>
+          <li><p>Function <code>np.array()</code> converts a <code>list</code> into an array</p></li>
+          <div class="cell">
+            <div class="sourceCode cell-code" id="cb5">
+              <pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">=</span> [<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>]  # This is a list.</span><br /><span id="cb5-2"><a href="#cb5=2"></a>x <span class="ot">=</span> <span class="fu">np.array</span>([<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>])  # This is an array.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+            </div>
+          </div>
+          <li><p>Indexing <code>[]</code> retrieves elements of a vector by position (or by name for a named vector)</p></li>
+          <div class="cell">
+            <div class="sourceCode cell-code" id="cb6">
+              <pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">print</span>(x[<span class="dv">0</span>])</span><br /><span id="cb6-2"><a href="#cb6-2"></a><span class="fu">print</span>(x[<span class="dv">1</span>])</span><br /><span id="cb6-3"><a href="#cb6-3"></a><span class="fu">print</span>(x[<span class="dv">2</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+            </div>
+            <div class="cell-output cell-output-stdout">
+              <pre><code>2</code></pre>
+              <pre><code>4</code></pre>
+              <pre><code>6</code></pre>
+            </div>
+          </div>
+        </ul>
+      </section>
+
+      <section id="useful-vector-functions" class="slide level2">
+        <h2>Useful Vector Functions</h2>
+        <ul>
+          <li><p><code>len()</code>: returns the number of elements in the array</p></li>
+          <div class="cell">
+            <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">print</span>(<span class="fu">len</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+            <div class="cell-output cell-output-stdout">
+              <pre><code>3</code></pre>
+            </div>
+          </div>
+          <li><p><code>np.mean()</code>: mean of elements in vector</p></li>
+          <div class="cell">
+            <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">print</span>(<span class="fu">np.mean</span>(x))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+            <div class="cell-output cell-output-stdout">
+              <pre><code>4</code></pre>
+            </div>
+          </div>
+        </ul>
+        <ul>
+          <li><p>Be careful with <code>NaN</code> values</p></li>
+          <div class="cell">
+            <div class="sourceCode cell-code" id="cb12">
+              <pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1"></a>x2 <span class="ot">=</span> [<span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">6</span>, <span class="cn">np.NaN</span>]</span><br /><span id="cb12-2"><a href="#cb12-2"></a><span class="fu">print</span>(<span class="fu">np.mean</span>(x2))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+            </div>
+            <div class="cell-output cell-output-stdout">
+              <pre><code>nan</code></pre>
+            </div>
+          </div>
+        </ul>
+      </section>
+
+      <section id="dataframes" class="slide level2">
+        <h2><code>DataFrame</code>'s</h2>
+        <ul>
+          <li><p>Tidy data principles</p></li>
+          <ul>
+            <li><p>Each row is an <strong>observation</strong></p></li>
+            <li><p>Each column is a <strong>variable</strong></p></li>
+            <li><p>Each cell contains <strong>one value</strong></p></li>
+          </ul>
+          <li><p>How do data frames relate to vectors?</p></li>
+          <ul>
+           <li>Imagine a data frame as a bunch of vertical vectors next to each other</li>
+          </ul>
+          <li><p><code>pd.DataFrame</code> creates a data frame</p></li>
+        </ul>
+      </section>
+
+      <section id="importing-data-as-data-frames" class="slide level2">
+        <h2>Importing Data as <code>DataFrame</code>&apos;s</h2>
+        <ul>
+          <li><p>Common formats include <code>.csv</code>, <code>.tsv</code>, and <code>.txt</code></p></li>
+          <ul>
+            <li><p>Read with <code>pandas</code> function: <code>pd.read_csv()</code></p> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html" target="_blank">More</a></li>
+            <li><p>Remember to import the <code>pandas</code> package!<br /><code>import pandas as pd</code></p></li>
+          </ul>
+          <li><p>Software-specific formats include:</p></li>
+          <ul>
+            <li><p>Excel (.xls, .xlsx)</p></li>
+            <ul>
+              <li>Read with <code>pandas</code> function: <code>pd.read_excel()</code> <a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_excel.html" target="_blank">More</a></li>
+            </ul>
+          </ul>
+        </ul>
+      </section>
+
+      <!-- TODO -->
+      <section id="viewing-your-data" class="slide level2">
+        <h2>Exploring Your Data</h2>
+        <ul>
+          <li><p>Use <code>print(my_data.columns)</code> to print out the features in your dataset.</p></li>
+          <li><p>Use <code>print(my_data)</code> to view the size of the dataset and some example rows.</p></li>
+          <li><p>Use the <code>matplotlib</code> library to plot data of interest. <a href="https://matplotlib.org/stable/tutorials/pyplot.html#sphx-glr-tutorials-pyplot-py" target="_blank">Tutorial</a></p></li>
+          <div class="cell">
+            <div class="sourceCode cell-code" id="cb122">
+              <pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb122-1"><a href="#cb122-1"></a><span class="im">import</span> <span class="fu">matplotlib.pyplot</span> <span class="kw">as</span> <span class="fu">plt</span></span><br /><span id="cb122-2"><a href="#cb122-2"></a><span class="fu">plt</span>.<span class="fu">figure</span>()</span><br /><span id="cb122-3"><a href="#cb122-3"></a><span class="fu">plt</span>.<span class="fu">plot</span>(<span class="va">my_dataset</span>)</span><br /><span id="cb122-4"><a href="#cb122-4"></a><span class="fu">plt</span>.<span class="fu">show</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre>
+            </div>
+          </div>
+        </ul>
+      </section>
+
+      <section id="accessing-your-data" class="slide level2">
+        <h2>Accessing your Data</h2>
+        <ul>
+        <li><p>Use the <code>[]</code> operator to select specific columns</p></li>
+        <div class="cell">
+          <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Here's an example dataset previously imported</span></span><br /><span id="cb18-2"><a href="#cb18-2"></a><span class="va">iris</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+          <div class="cell-output cell-output-stdout">
+            <pre><code>  Sepal.Length Sepal.Width Petal.Length Petal.Width Factor
+        1          5.1         3.5          1.4      0.2
+        2          4.9         3.0          1.4      0.7
+        3          4.7         3.2          1.3      1.3
+        4          4.6         3.1          1.5      1.0
+        5          5.0         3.6          1.4      0.9
+        6          5.4         3.9          1.7      0.4
+            </code></pre>
+          </div>
+          <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="co"># Select the "Factor" attribute</span></span><br /><span id="cb20-2"><a href="#cb20-2"></a><span class="va">iris</span>[<span class="ch">"Factor"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+          <div class="cell-output cell-output-stdout">
+            <pre><code>0.2 0.7 1.3 1.0 0.9 0.4</code></pre>
+          </div>
+          <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1"></a><span class="co"># Select both the "Factor" and "Petal.Length" attributes</span></span><br /><span id="cb22-2"><a href="#cb22-2"></a><span class="va">iris</span>[[<span class="ch">"Factor"</span>, <span class="ch">"Petal.Length"</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+        </div>
+        </ul>
+      </section>
+
+      <section id="crap-my-codes-not-working" class="slide level2">
+        <h2>My code&apos;s not working...</h2>
+        <ul>
+          <li><p>Google and StackOverflow are your best friends</p></li>
+          <li><p>When asking a question online, make sure your code is <strong>as simple as possible.</strong> Only include the minimum required lines</p></li>
+          <li><p>ChatGPT may be helpful</p></li>
+          <li><p>Stop by Office Hours and ask for help!</p></li>
+        </ul>
+      </section>
+
+      <section id="acknowledgements" class="slide level2">
+        <h2>Acknowledgements</h2>
+        <p>Many thanks to Lathan Liou for providing the template for this presentation!</p>
+      </section>
+
+      <section id="resources" class="slide level2">
+        <h2>Useful Highest-Yield Resources</h2>
+        <ul>
+          <li><p>Messaging <a href="mailto:michael@mdplusplus.org" target="_blank">Michael</a> :)</p></li>
+          <li><p><a href="https://www.dataquest.io/blog/numpy-cheat-sheet/" target="_blank">NumPy Cheat Sheet</a></p></li>
+          <li><p><a href="https://numpy.org/doc/stable/user/index.html#user" target="_blank">NumPy Official Documentation</a></p></li>
+          <li><p><a href="https://github.com/pandas-dev/pandas/blob/main/doc/cheatsheet/Pandas_Cheat_Sheet.pdf" target="_blank">Pandas Cheat Sheet</a></p></li>
+          <li><p><a href="https://pandas.pydata.org/docs/user_guide/index.html#user-guide" target="_blank">Pandas Official Documentation</a></p></li>
+          <li><p><a href="https://github.com/MDplusOfficial/Datathon2023/tree/main/code/python_" target="_blank">Sample Datathon Code</a></p></li>
+        </ul>
+        <div class="footer footer-default"></div>
+      </section>
+    </div>
+  </div>
+
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="/static/styles/r_workshop_1_files/libs/revealjs/plugin/math/math.js"></script>
+  <script id="quarto-html-after-body" type="application/javascript"src="/static/styles/js/python.js"></script>
+</body></html>
