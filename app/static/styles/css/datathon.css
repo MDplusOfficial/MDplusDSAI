@@ -9,7 +9,7 @@ h1#title {
 h2 {
   font-weight: 500;
   letter-spacing: 1px;
-  color: #2D0D53;
+  color: #2d0d53;
   margin: 25px 0 5px 0;
 }
 
@@ -26,8 +26,11 @@ p.info {
   margin: 5px 0;
 }
 
-.purple, #terminal, #console, .info > a {
-  color: #2D0D53;
+.purple,
+#terminal,
+#console,
+.info > a {
+  color: #2d0d53;
 }
 
 #countdown {
@@ -35,7 +38,7 @@ p.info {
   font-size: 24px;
   opacity: 0.8;
   font-weight: 500;
-  letter-spacing: 1px; 
+  letter-spacing: 1px;
   margin-top: 2px;
 }
 
@@ -44,14 +47,26 @@ p.info {
   font-size: 16px;
   opacity: 0.5;
   font-weight: 500;
-  letter-spacing: 1px; 
+  letter-spacing: 1px;
   margin-bottom: 2px;
 }
 
+ul li {
+  margin-bottom: 8px;
+}
 
 @media screen and (min-width: 1296px) {
-  body h1, body p, body h2, body h3 {
+  body h1,
+  body p,
+  body h2,
+  body h3,
+  body div#app {
     padding-left: 20% !important;
     padding-right: 20% !important;
+  }
+
+  body ul {
+    padding-left: 23% !important;
+    padding-right: 23% !important;
   }
 }
