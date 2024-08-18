@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en-US" style="scroll-behavior: smooth">
+  <head>
+    <title>MDplus DS & AI - Datathon</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#3B79B8" />
+    <script src="https://use.fontawesome.com/cefbebdc70.js"></script>
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/mdplus-logo.png') }}"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      href="{{ url_for('static', filename='images/mdplus-logo.png') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles/css/global.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles/css/index.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles/css/datathon.css') }}"
+    />
+  </head>
+
+  <!-- Jinja template variables for consistency -->
+  {% set datathon_2024_start_date = "Wednesday, October 23, 2024" %} {% set
+  datathon_2024_end_date = "Wednesday, November 13, 2024" %} {% set
+  signup_start_date = "Monday, October 7, 2024" %} {% set signup_end_date =
+  "Friday, October 18, 2024" %} {% set judgement_day = "Monday, November 18,
+  2024" %}
+
+  <body>
+    <a href="/"
+      ><img
+        src="{{ url_for('static', filename='images/mdplus-logo.png') }}"
+        alt="MDplus Logo"
+        class="logo"
+    /></a>
+    <nav>
+      <a href="/resources">Resources</a>
+      <a href="/blog">Blog</a>
+      <a href="/network">Network</a>
+      <a href="/datathon/2024" class="active">Datathon</a>
+    </nav>
+
+    <h1 id="title">
+      <span style="color: #3b79b8">MD</span
+      ><span style="color: #f7cd4c">plus</span>&ensp;<span id="terminal"></span
+      ><span id="console">&#95;</span>
+    </h1>
+
+    <p id="countdown-header">Kickoff event in</p>
+    <p id="countdown">&emsp;</p>
+
+    <h2>Introduction</h2>
+    <p class="info">
+      Welcome to the <b>2024 MDplus Datathon</b>! The 3rd annual MD+ datathon is
+      a national month-long event hosted by MD+ and sponsors to foster
+      innovative thinking about complex healthcare problems and their
+      data-driven solutions.
+    </p>
+
+    <p class="info">
+      You will work together with other medical students, graduate students, and
+      trainees from all levels to generate insights and engineer solutions from
+      clinical datasets. In contrast to prior years,
+      <b
+        >this year's datathon will be divided into 3 separate competition
+        tracks</b
+      >, each using a different publicly available dataset:
+    </p>
+
+    <ul class="info">
+      <li>
+        <strong>Mental Health Track</strong>
+      </li>
+
+      <li><strong>Clinical Documentation Track</strong></li>
+
+      <li><strong>Medical Education Track</strong></li>
+    </ul>
+
+    <p class="info">
+      The specific datasets for each track will be announced after team
+      formation to ensure fairness. Datasets will be made available on
+      HuggingFace.
+    </p>
+
+    <h2>Logistics</h2>
+    <p class="info">
+      The 2024 MDplus Datathon runs from <b>{{datathon_2024_start_date}}</b> at
+      <b>6 pm EST</b> to <b>{{datathon_2024_end_date}}</b> at
+      <b>11:59 pm AOE</b>. Participating teams will use quantitative analyses
+      (e.g. visualization, statistics, and other computational tools) to form
+      clinical insights and contextualize them into actionable proposals for
+      relevant stakeholders. As part of the datathon, participants will be
+      invited to attend (optional) workshops and private events with sponsors
+      (i.e., Python/R bootcamps, oral presentation workshops, fireside chats,
+      etc.).
+    </p>
+
+    <p class="info">
+      Final projects and presentations will be reviewed by a panel of expert
+      judges, and the top 8 projects will be invited to a live pitch competition
+      on <strong>{{judgement_day}}</strong> at 5:00 PM EST. Live pitches are capped at 10 minutes
+      per presentation followed by 2 min of Q&A. At the end of the live pitch
+      competition, winners will be announced after a 30 minutes private
+      deliberation period between the judges. The entirety of the live pitch
+      competition will last approximately 150 minutes.
+    </p>
+
+    <h2>Signup with a Team or Individually</h2>
+    <!-- <p class="info">Sign ups for the 2024 datathon are now closed. Please contact our team with any additional questions or concerns.</p> -->
+    <p class="info">
+      Signups will run from <b>{{signup_start_date}}</b> to
+      <b>{{signup_end_date}}</b> at <b>11:59 pm AOE</b>.
+    </p>
+
+    <p class="info">
+      Please fill out the Google Form below if interested! (also linked
+      <a href="https://forms.gle/52xLp2SNTL9U5Yy48" target="_blank">here</a>)
+    </p>
+
+    <iframe
+      src="https://docs.google.com/forms/d/e/1FAIpQLSf2Rif-HRiBfDZbUDTWwMuBLH_A93CnBBgbGrIvCIo4xz4VjA/viewform?embedded=true"
+      width="100%"
+      height="600"
+      frameborder="0"
+      marginheight="0"
+      marginwidth="0"
+      >Loading…</iframe
+    >
+
+    <h2>Timeline</h2>
+
+    <ul class="info">
+      <li><strong>{{signup_start_date}}</strong>: Signups open</li>
+
+      <li><strong>{{signup_end_date}}</strong>: Signups close</li>
+
+      <li>
+        <strong>{{signup_end_date}} to {{datathon_2024_start_date}}</strong>:
+        Application review, application status notification, and team formation
+      </li>
+
+      <li>
+        <strong>{{datathon_2024_start_date}}</strong>: Start of datathon,
+        datasets released
+      </li>
+
+      <li>
+        <strong>{{datathon_2024_end_date}}</strong>: Final submissions due at
+        11:59pm AOE
+      </li>
+
+      <li>
+        <strong>{{judgement_day}}</strong>: Finalists presentation to judge
+        panel
+      </li>
+    </ul>
+
+    <h2><i class="fa fa-github" style="margin-right: 5px"></i> Tutorials</h2>
+
+    <!-- TODO: update -->
+    <!-- <p class="info">
+      The link to the Datathon&apos;s GitHub repository can be found
+      <a
+        href="https://github.com/MDplusOfficial/Datathon2024/tree/main"
+        target="_blank"
+        >here</a
+      >.
+    </p>
+    <h3>Downloading and Overview of the MIMIC-IV Dataset</h3>
+    <p class="info">
+      <a
+        href="https://github.com/MDplusOfficial/Datathon2024/blob/main/tutorials/MIMIC.md"
+        target="_blank"
+        >Written Tutorial</a
+      >
+    </p> -->
+
+    <h3>Introduction to Python</h3>
+    <p class="info">
+      <a href="/datathon/python">Written Tutorial</a> &ensp;|&ensp;
+      <a
+        href="https://github.com/MDplusOfficial/Datathon2024/blob/main/code/python_/intro.py"
+        target="_blank"
+        >Example Code</a
+      >
+    </p>
+    <h3>Introduction to R</h3>
+    <p class="info">
+      <a href="/datathon/r">Written Tutorial</a> &ensp;|&ensp;
+      <a
+        href="https://github.com/MDplusOfficial/Datathon2024/blob/main/tutorials/INTRO_r.Rmd"
+        target="_blank"
+        >Example Code</a
+      >
+    </p>
+
+    <h2>Events Schedule</h2>
+
+    <p class="info">To be updated soon!</p>
+
+    <!-- TODO: update -->
+    <!-- <p class="info">
+      <b>Wed 10/25 @6p EDT</b>&emsp;<b
+        >Datathon Kickoff Event (<a
+          href="https://youtu.be/7hjTrusgtoc"
+          target="_blank"
+          style="color: rgb(85, 26, 139)"
+          >Recording</a
+        >)</b
+      ><br />&emsp;Join us for the launch of the 2nd annual MD+ datathon event!
+      We&apos;ll cover event logistics, judging, and prizes.
+    </p>
+    <p class="info">
+      <b>Mon 10/30 @7p EDT</b>&emsp;<b
+        >Introduction to Python (<a
+          href="https://youtu.be/bJlYNFWc2vs"
+          target="_blank"
+          style="color: rgb(85, 26, 139)"
+          >Recording</a
+        >)</b
+      ><br />&emsp;Perfect for beginner programmers and for those that have
+      never programmed with Python before.
+    </p>
+    <p class="info">
+      <b>Wed 11/01 @7p EDT</b>&emsp;<b
+        >Navigating MIMIC-IV with Python (<a
+          href="https://youtu.be/9g0GCwywQpI"
+          target="_blank"
+          style="color: rgb(85, 26, 139)"
+          >Recording</a
+        >)</b
+      ><br />&emsp;Learn how to load, parse, and analyze the MIMIC-IV dataset
+      with Python.
+    </p>
+    <p class="info">
+      <b>Tues 11/07 @7p EST</b>&emsp;<b
+        >Office Hours #1 with Lathan: R, General</b
+      ><br />&emsp;Need help debugging an R program or want to bounce your ideas
+      off us? Talk to our team at virtual office hours!
+    </p>
+    <p class="info">
+      <b>Wed 11/08 @7p EST</b>&emsp;<b
+        >Office Hours #2 with Michael: Python, General</b
+      ><br />&emsp;Need help debugging a Python program or want to bounce your
+      ideas off us? Talk to our team at virtual office hours!
+    </p>
+    <p class="info">
+      <b>Sat 11/11 @noon EST</b>&emsp;<b
+        >Office Hours #3 with Michael: Python, General</b
+      ><br />&emsp;Need help debugging a Pythonprogram or want to bounce your
+      ideas off us? Talk to our team at virtual office hours!
+    </p>
+    <p class="info" style="color: rgb(85, 26, 139)">
+      <b>Mon 11/20 @5 EST</b>&emsp;<b
+        >Finalist Pitch Competition (<a
+          href="https://mssm.zoom.us/j/7595547813"
+          target="_blank"
+          style="color: rgb(85, 26, 139)"
+          >Zoom Link</a
+        >)</b
+      ><br />&emsp;Join us in hearing pitches from the seven finalist teams for
+      the 2024 datathon as they vie for the grand prize of $3,000.
+    </p>
+    <p class="info">
+      <b>Asynchronous</b>&emsp;<b
+        >Best Practices in Data Science (<a
+          href="https://drive.google.com/file/d/1lSkRFLWv4L1hGD7emTf68vMjcDWKfAiv/view"
+          target="_blank"
+          style="color: rgb(85, 26, 139)"
+          >Recording</a
+        >)</b
+      ><br />&emsp;Listen to this talk from last year&apos;s datathon by
+      <a href="https://www.linkedin.com/in/ohumblet" target="_blank"
+        >Olivier Humblet</a
+      >, Head of HEOR at Regeneron.
+    </p> -->
+
+    <h2>Meet the Judges</h2>
+
+    <p class="info">To be announced shortly!</p>
+
+    <!-- <h3 style="margin-top: 10px">
+      <a
+        href="https://www.linkedin.com/in/reza-alavi-md-mba"
+        style="color: rgb(85, 26, 139)"
+        >Reza Alavi, MD, MHS, MBA</a
+      >
+    </h3>
+    <p class="info">Johns Hopkins University, Quintuple Aim Solutions</p>
+
+    <h3>
+      <a
+        href="https://www.linkedin.com/in/carolineberchuck"
+        style="color: rgb(85, 26, 139)"
+        >Caroline Berchuck, MD, MPH</a
+      >
+    </h3>
+    <p class="info">
+      Brigham &amp; Women&apos;s Hospital, McKinsey &amp; Company
+    </p>
+
+    <h3>
+      <a
+        href="https://www.linkedin.com/in/amit-phull-09931667"
+        style="color: rgb(85, 26, 139)"
+        >Amit Phull, MD</a
+      >
+    </h3>
+    <p class="info">Northwestern University, Doximity</p>
+
+    <h3>
+      <a
+        href="https://www.linkedin.com/in/sid-salvi"
+        style="color: rgb(85, 26, 139)"
+        >Sid Salvi</a
+      >
+    </h3>
+    <p class="info">ML/AI Product Leader &amp; Advisor, prev. Cerebral</p>
+
+    <h3>
+      <a
+        href="https://www.linkedin.com/in/kathryn-a-teng-md-mba-facp-92b4405b"
+        style="color: rgb(85, 26, 139)"
+        >Kathryn Teng, MD, MBA, FACP</a
+      >
+    </h3>
+    <p class="info">Progressive Insurance, prev. Cleveland Clinic</p> -->
+
+    <h2>FAQs</h2>
+    <h3 style="margin-top: 5px">
+      I have little/no data science or computational experience. Can I still
+      participate?
+    </h3>
+    <p class="info">
+      Absolutely! Learning the computational tools is half the fun of the event.
+      Participants will have access to tutorials walking through the basics of
+      Python and R, and also how to go about analyzing the dataset. Datathon
+      submissions are also judged on more than just technical complexity. In
+      fact, datathon judges care more about the insights derived and the data
+      analysis than the computational novelty or complexity of the project!
+    </p>
+
+    <h3>What will we actually be doing?</h3>
+    <p class="info">
+      Students will be provided a dataset (e.g., claims and hospital data) and
+      are then asked to
+      <b class="purple">identify an addressible problem</b> (e.g., understanding
+      the impact of hospital quality metrics on spending) to
+      <b class="purple">explore through analyzing the dataset</b> (e.g., an
+      observational study comparing high- vs. low- quality hospitals, an
+      interpretable ML model predicting spending rates depending on hospital
+      attributes and outcomes, etc.) to
+      <b class="purple">create an actionable recommendation</b> (e.g., quality
+      metrics should be indexed by spending, and efforts to deliver high quality
+      care will result in more value-based spending habits).
+    </p>
+
+    <h3>
+      I don&apos;t have the best laptop for data analysis... Can I still
+      participate?
+    </h3>
+    <p class="info">
+      Yes! We&apos;ve partnered with
+      <a
+        href="https://huggingface.co/mdplus"
+        style="font-weight: 600"
+        target="_blank"
+        >Hugging Face</a
+      >
+      &#129303; to bring you <b class="purple">free</b> access to powerful
+      computational resources dedicated to the event. To get started, join our
+      MDplus Hugging Face community
+      <a
+        href="https://huggingface.co/mdplus"
+        target="_blank"
+        style="font-weight: 600"
+        >here</a
+      >.
+    </p>
+
+    <h3>What&apos;s the time commitment look like?</h3>
+    <p class="info">
+      It&apos;s flexible and depending on your group and project!
+    </p>
+
+    <h3>I have additional questions? Who can I reach out to?</h3>
+    <p class="info">
+      Send us an email or DM us via Slack! The best folks to reach out are the
+      co-directors of data science and AI, <b class="purple">Emily Leventhal</b>, <b class="purple">Michael Yao</b> (<a
+        href="mailto:michael@mdplusplus.org"
+        >email</a
+      >), or <b class="purple">Lawrence Huang</b>. We&apos;re happy to answer any questions from signing up for the
+      datathon to technical questions during the event.
+    </p>
+
+    <footer>
+      <p>
+        &#169;<span id="footer-current-year"></span>. A community project made
+        with &#10084;&#65039; by
+        <a href="https://www.mdplus.community">MDplus</a>. All rights reserved.
+        <a href="/changelog">Changelog</a>.
+      </p>
+    </footer>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='styles/js/footer.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='styles/js/datathon.js') }}"
+    ></script>
+    <script>
+      // animation for Datathon text
+      consoleText("Datathon 2024", "terminal");
+    </script>
+  </body>
+</html>

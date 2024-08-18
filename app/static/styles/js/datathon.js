@@ -42,5 +42,3 @@ function consoleText(word, id) {
     }
   }, 240)
 }
-
-consoleText("Datathon 2023", "terminal");
