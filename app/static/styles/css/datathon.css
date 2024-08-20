@@ -20,6 +20,12 @@ h3 {
   font-size: 16px;
 }
 
+h3.project-title {
+    margin-top: 0;
+    font-size: 14px;
+    color: rgb(146, 93, 194);
+}
+
 p.info {
   padding: 0;
   font-size: 14px;
