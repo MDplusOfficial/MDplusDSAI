@@ -1,436 +1,310 @@
 <!DOCTYPE html>
-<html lang="en-US" style="scroll-behavior: smooth">
-  <head>
-    <title>MDplus DS & AI - Datathon</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#3B79B8" />
-    <script src="https://use.fontawesome.com/cefbebdc70.js"></script>
-    <link
-      rel="icon"
-      type="image/png"
-      href="{{ url_for('static', filename='images/mdplus-logo.png') }}"
-    />
-    <link
-      rel="apple-touch-icon"
-      type="image/png"
-      href="{{ url_for('static', filename='images/mdplus-logo.png') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='styles/css/global.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='styles/css/index.css') }}"
-    />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="{{ url_for('static', filename='styles/css/datathon.css') }}"
-    />
-  </head>
+<html lang="en">
+{% set datathon_2025_start_date = "Monday, September 29, 2025" %} {% set
+  datathon_2025_end_date = "Wednesday, October 22, 2025" %} {% set
+  signup_start_date = "Wednesday, September, 10, 2025" %} {% set signup_end_date =
+  "Friday, September 26, 2025" %} {% set judgement_day = "Tuesday, October 28,
+  2025" %}
+<head>
+  <link
+  rel="icon"
+  type="image/png"
+  href="{{ url_for('static', filename='images/mdplus-logo.png') }}"
+/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MD+ 2025 Datathon — Empowering Patients Through AI</title>
+  <meta name="description" content="Join the MD+ 2025 Datathon: Empowering Patients Through AI. Build solutions with clinicians, patients, and data scientists. Workshops, mentorship, prizes." />
+  <meta name="color-scheme" content="light dark" />
+  <style>
+  :root{
+    --brand: #3b79b8;   /* blue */
+    --accent: #f7cd4c;  /* yellow (sparingly) */
+    --bg: #0e1624;      /* deep navy */
+    --bg-2: #0b1220;    /* deeper navy */
+    --text: #f7f9ff;    /* near-white */
+    --muted: #c8d5ea;   /* soft blue-gray */
+    --card: #111a2e;    /* card surface */
+    --ring: #28446a;    /* borders */
+  }
 
-  <!-- Jinja template variables for consistency -->
-  {% set datathon_2024_start_date = "Wednesday, October 23, 2024" %} {% set
-  datathon_2024_end_date = "Wednesday, November 13, 2024" %} {% set
-  signup_start_date = "Tuesday, October 8, 2024" %} {% set signup_end_date =
-  "Friday, October 18, 2024" %} {% set judgement_day = "Monday, November 18,
-  2024" %}
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f7f8ff;
+        --bg-2: #eef1ff;
+        --text: #131a35;
+        --muted: #4a5686;
+        --brand: #3b5bfd;
+        --brand-2: #06c39d;
+        --card: #ffffff;
+        --ring: #dfe5ff;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+      radial-gradient(1200px 800px at 85% -10%, rgba(59,121,184,.22), transparent 60%), /* brand blue glow */
+      radial-gradient(900px 600px at -10% 25%, rgba(255,255,255,.06), transparent 55%),  /* soft white glow */
+      linear-gradient(180deg, var(--bg), var(--bg-2));
+    color: var(--text);
+    }
 
-  <body>
-    <a href="/"
-      ><img
-        src="{{ url_for('static', filename='images/mdplus-logo.png') }}"
-        alt="MDplus Logo"
-        class="logo"
-    /></a>
-    <nav>
-      <a href="/resources">Resources</a>
-      <a href="/blog">Blog</a>
-      <a href="/network">Network</a>
-      <a href="/datathon/2025" class="active">Datathon</a>
-    </nav>
+    /* Layout */
+    .container { width: min(1100px, 92vw); margin: 0 auto; }
 
-    <h1 id="title">
-      <span style="color: #3b79b8">MD</span
-      ><span style="color: #f7cd4c">plus</span>&ensp;<span id="terminal"></span
-      ><span id="console">&#95;</span>
-    </h1>
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px);
+      background: color-mix(in oklab, var(--bg) 80%, transparent);
+      border-bottom: 1px solid color-mix(in oklab, var(--ring) 60%, transparent);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; }
+    .brand { display: flex; gap: .7rem; align-items: center; font-weight: 800; letter-spacing: .2px; }
+    .brand-badge { width: 34px; height: 34px; border-radius: 11px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display: grid; place-items: center; color: #0b1020; font-weight: 900; }
+    nav a { color: var(--muted); text-decoration: none; margin-left: 1.2rem; font-weight: 600; }
+    nav a:hover { color: var(--text); }
 
-    <p id="countdown-header">Kickoff event in</p>
-    <p id="countdown">&emsp;</p>
+    /* Hero */
+    .hero { position: relative; padding: 5.5rem 0 4rem; overflow: clip; }
+    .halo {
+      position: absolute; inset: -30% -20% auto -20%; height: 70vh; pointer-events: none;
+      background: radial-gradient(closest-side, rgba(124,140,255,.23), transparent 60%),
+                  radial-gradient(closest-side, rgba(112,255,212,.18), transparent 55%);
+      filter: blur(40px); opacity: .9;
+      mask: radial-gradient(80% 60% at 50% 40%, #000 60%, transparent 100%);
+    }
+    .hero h1 { font-size: clamp(2rem, 4.5vw, 4rem); line-height: 1.05; margin: 0 0 1rem; }
+    .hero .kicker { text-transform: uppercase; letter-spacing: .22em; font-size: .82rem; color: var(--brand-2); font-weight: 800; }
+    .hero .sub { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.2rem); max-width: 60ch; }
 
-    <h2>Introduction</h2>
-    <p class="info">
-      Welcome to the <b>2024 MDplus Datathon</b>! The 3rd annual MD+ datathon is
-      a national month-long event hosted by MD+ and sponsors to foster
-      innovative thinking about complex healthcare problems and their
-      data-driven solutions.
-    </p>
+    .cta-row { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.8rem; }
+    .btn { border: 1px solid color-mix(in oklab, var(--ring) 65%, transparent); background: color-mix(in oklab, var(--card) 88%, transparent); color: var(--text); padding: .9rem 1.1rem; border-radius: 14px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: .6rem; box-shadow: 0 1px 0 rgba(0,0,0,.12) inset, 0 10px 30px rgba(60,80,255,.10);
+      transition: transform .12s ease, background .2s ease, border-color .2s ease; }
+    .btn:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--brand) 50%, var(--ring)); }
+    .btn.primary { background: linear-gradient(180deg, color-mix(in oklab, var(--brand) 28%, var(--card)), color-mix(in oklab, var(--brand-2) 12%, var(--card))); border-color: color-mix(in oklab, var(--brand) 40%, var(--ring)); }
 
-    <p class="info">
-      You will work together with other medical students, graduate students, and
-      trainees from all levels to generate insights and engineer solutions from
-      clinical datasets. In contrast to prior years,
-      <b
-        >this year's datathon will be divided into 3 separate competition
-        tracks</b
-      >, each using a different publicly available dataset:
-    </p>
+    /* Stat pills */
+    .pills { margin-top: 2rem; display: flex; gap: .8rem; flex-wrap: wrap; }
+    .pill { padding: .55rem .7rem; border-radius: 999px; border: 1px dashed color-mix(in oklab, var(--ring) 70%, transparent); color: var(--muted); font-weight: 700; font-size: .9rem; }
 
-    <ul class="info">
-      <li>
-        <strong>Mental Health Track</strong>
-      </li>
+    /* Cards grid */
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1rem; margin: 3rem 0; }
+    .card { grid-column: span 12; background: color-mix(in oklab, var(--card) 92%, transparent); border: 1px solid color-mix(in oklab, var(--ring) 70%, transparent); border-radius: 20px; padding: 1.2rem; box-shadow: 0 6px 30px rgba(0,0,0,.12);
+      transition: border-color .2s ease; }
+    .card:hover { border-color: color-mix(in oklab, var(--brand) 22%, var(--ring)); }
+    .card h3 { margin: .2rem 0 .7rem; font-size: 1.2rem; }
+    .card p { margin: .4rem 0 0; color: var(--muted); }
 
-      <li><strong>Clinical Documentation Track</strong></li>
+    @media (min-width: 720px) {
+      .card.sm-6 { grid-column: span 6; }
+      .card.sm-4 { grid-column: span 4; }
+    }
 
-      <li><strong>Medical Education Track</strong></li>
-    </ul>
+    /* Timeline */
+    .timeline { position: relative; padding-left: 1.2rem; }
+    .timeline::before { content: ""; position: absolute; left: .3rem; top: .25rem; bottom: .25rem; width: 2px; background: color-mix(in oklab, var(--ring) 70%, transparent); }
+    .tl-item { position: relative; margin: 1rem 0; padding-left: .8rem; }
+    .tl-item::marker { content: none; }
+    .dot { position: absolute; left: -0.15rem; top: .2rem; width: .7rem; height: .7rem; border-radius: 50%; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: 0 0 0 4px color-mix(in oklab, var(--ring) 65%, transparent); }
 
-    <p class="info">
-      The specific datasets for each track will be announced after team
-      formation. Datasets will be made available on HuggingFace.
-    </p>
+    /* Footer */
+    footer { border-top: 1px solid color-mix(in oklab, var(--ring) 60%, transparent); padding: 2.2rem 0 3rem; color: var(--muted); }
+    .foot-grid { display: grid; gap: 1rem; grid-template-columns: repeat(12, 1fr); }
+    .foot-col { grid-column: span 12; }
+    @media (min-width: 720px) { .foot-col { grid-column: span 4; } }
 
-    <h2>Use of Generative AI</h2>
+    /* Utilities */
+    .tag { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .6rem; border-radius: 999px; background: color-mix(in oklab, var(--brand-2) 10%, transparent); border: 1px solid color-mix(in oklab, var(--brand-2) 40%, var(--ring)); color: color-mix(in oklab, var(--brand-2) 80%, #0b1020); font-weight: 800; font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; }
+    .mono { font-variant-numeric: tabular-nums; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .muted { color: var(--muted); }
+    .section-title { font-size: clamp(1.4rem, 2.6vw, 2rem); margin: 0 0 .6rem; }
+    .kgrid { display:grid; grid-template-columns: repeat(12, 1fr); gap: .8rem; }
+    .kcard { grid-column: span 12; background: color-mix(in oklab, var(--card) 92%, transparent); border: 1px dashed color-mix(in oklab, var(--ring) 70%, transparent); border-radius: 16px; padding: .9rem; }
+    @media (min-width: 680px) { .kcard.sm-6{ grid-column: span 6; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="brand-badge">MD+</div>
+        <div>MD+ 2025 Datathon</div>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#theme">Theme</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#faqs">FAQs</a>
+        <a href="#register" class="btn" style="padding:.45rem .75rem;">Register</a>
+      </nav>
+    </div>
+  </header>
 
-    <p class="info">
-      Note that for the purposes of the Datathon, you may only use
-      <strong
-        >open-source models with 8-billion parameters or less if you're using an
-        LLM as a part of your project.</strong
-      >
-      This restriction does not apply to tools used during development of
-      the project. In other words, the final product of your datathon submission
-      is subject to this restriction, but how you get there is up to you!
-    </p>
+  <main>
+    <section class="hero">
+      <div class="halo" aria-hidden="true"></div>
+      <div class="container">
+        <div class="kicker">MD+ presents</div>
+        <h1>MD+ 2025 Datathon</h1>
+        <p class="sub">
+          <strong>Theme:</strong> <em>Empowering Patients Through AI</em>
+        </p>
+        <div class="pills" role="list">
+          <div class="pill" role="listitem">Dates: <span class="mono">9/29/25-10/22/25</span></div>
+          <div class="pill" role="listitem">Location: <span class="mono">Remote</span></div>
+          <div class="pill" role="listitem">Team size: <span class="mono">3–6</span></div>
+          <div class="pill" role="listitem">Open to: <span class="mono"> Medical Students · Residents · Graduate Students</span></div>
+        </div>
+        <div class="cta-row">
+          <a id="register" href="#" class="btn primary" aria-label="Register for the MD+ 2025 Datathon">Register Now</a>
+          <!-- <a href="#prospectus" class="btn" aria-label="Download the datathon prospectus">Prospectus (PDF)</a> -->
+          <a href="#judges" class="btn" aria-label="See mentors and judges">Judges</a>
+        </div>
+      </div>
+    </section>
 
-    <h2>Logistics</h2>
-    <p class="info">
-      The 2024 MDplus Datathon runs from <b>{{datathon_2024_start_date}}</b> at
-      <b>6 pm EST</b> to <b>{{datathon_2024_end_date}}</b> at
-      <b>11:59 pm AOE</b>. Participating teams will use quantitative analyses
-      (e.g. visualization, statistics, and other computational tools) to form
-      clinical insights and contextualize them into actionable proposals for
-      relevant stakeholders. As part of the datathon, participants will be
-      invited to attend (optional) workshops and private events with sponsors
-      (i.e., Python/R bootcamps, oral presentation workshops, fireside chats,
-      etc.).
-    </p>
+    <section id="about" class="container">
+      <h2 class="section-title">About the Datathon</h2>
+      <div class="grid">
+        <article class="card sm-6">
+          <h3>What is MD+ Datathon?</h3>
+          <p>The 4th annual MD+ Datathon is a 
+            national, month-long event that brings medical students from various backgrounds 
+            together to explore complex healthcare challenges and create data-driven solutions. 
+            Hosted by MD+ and its partners, the datathon encourages interdisciplinary collaboration, 
+            innovative thinking, and real-world problem solving using clinical datasets.  </p>
+        </article>
+        <article class="card sm-6">
+          <h3>Why "Empowering Patients Through AI"?</h3>
+          <p> Students are encouraged to interpret the theme broadly and creatively, drawing on their 
+            unique experiences and interests to define what "empowering patients" means in a data-driven context. 
+             </p>
+             <p>Some examples include health literacy, access to care, after-visit summaries, chatbots from chronic health conditions, insurance navigation, language accessibility, etc.</p>
+        </article>
+        <article class="card sm-4">
+          <h3>Who should join?</h3>
+          <p>Medical students, residents, and graduate students pursuing degrees related to human health. Multidisciplinary teams are highly encouraged.</p>
+        </article>
+        <article class="card sm-4">
+          <h3>What you'll get</h3>
+          <p>Skills in data analysis and machine learning, experience tackling high-impact problems in patient care, and opportunities to publish work. </p> <p>Additionally, the winners will receive a monetary prize!</p>
+        </article>
+        <!-- <article class="card sm-4">
+          <h3>How to prepare</h3>
+          <p>Bring your laptop, ideas, and empathy. We provide the rest: problem briefs, ethics guardrails, and sample code.</p>
+        </article> -->
+      </div>
+    </section>
 
-    <p class="info">
-      Final projects and presentations will be reviewed by a panel of expert
-      judges, and the top 8 projects will be invited to a live pitch competition
-      on <strong>{{judgement_day}}</strong> at 6:00 PM EST. Live pitches are
-      capped at 8 minutes per presentation followed by 2 min of Q&A. At the end
-      of the live pitch competition, winners will be announced after private
-      deliberation period between the judges. The entirety of
-      the live pitch competition will last approximately 100 minutes.
-    </p>
+    <section id="schedule" class="container">
+      <h2 class="section-title">Schedule (TBD)</h2>
+      <ol class="timeline" aria-label="Two-day schedule">
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Day 1 Morning:</strong> Opening Keynote • Problem Briefs • Team Formation
+        </li>
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Day 1 Afternoon:</strong> Workshops • Data Access • Mentorship Rounds
+        </li>
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Day 2 Morning:</strong> Build Sprints • Dry Runs • Safety Checks
+        </li>
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Day 2 Afternoon:</strong> Demos • Judging • Awards &amp; Closing
+        </li>
+      </ol>
+    </section>
 
-    <h2>Signup with a Team or Individually</h2>
-    <!-- <p class="info">Sign ups for the 2024 datathon are now closed. Please contact our team with any additional questions or concerns.</p> -->
-    <p class="info">
-      Signups will run from <b>{{signup_start_date}}</b> to
-      <b>{{signup_end_date}}</b> at <b>11:59 pm AOE</b>.
-    </p>
+    <section id="judges" class="container">
+      <h2 class="section-title">Judges (TBD)</h2>
+      <div class="grid">
+        <article class="card sm-4">
+          <h3>Clinical Mentors</h3>
+          <p>Faculty physicians, nurse leaders, and pharmacists offering domain guidance.</p>
+        </article>
+        <article class="card sm-4">
+          <h3>Data &amp; Product</h3>
+          <p>ML engineers, product managers, and UX researchers to accelerate your build.</p>
+        </article>
+        <article class="card sm-4">
+          <h3>Patient Advisors</h3>
+          <p>Patients and caregivers ensuring solutions reflect real needs and constraints.</p>
+        </article>
+      </div>
+    </section>
 
-    <p class="info">
-      Please fill out the Google Form below if interested! (also linked
-      <a href="https://forms.gle/52xLp2SNTL9U5Yy48" target="_blank">here</a>)
-    </p>
+    <section id="faqs" class="container">
+      <h2 class="section-title">FAQs</h2>
+      <div class="grid">
+        <article class="card sm-6">
+          <h3>Do I need a team beforehand?</h3>
+          <p>No. Search for teammates by adding your name and bio to these slides.</p>
+        </article>
+        <article class="card sm-6">
+          <h3>Will data be de‑identified?</h3>
+          <p>Yes. All shared datasets are de‑identified and governed by event data use policies.</p>
+        </article>
+        <article class="card sm-6">
+          <h3>What about IP?</h3>
+          <p>Teams retain IP. Sponsors may offer optional collaboration agreements for pilots.</p>
+        </article>
+        <article class="card sm-6">
+          <h3>Is this beginner‑friendly?</h3>
+          <p>Absolutely. We provide starter notebooks, mentor office hours, and UX templates.</p>
+        </article>
+      </div>
+    </section>
 
-    <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSf2Rif-HRiBfDZbUDTWwMuBLH_A93CnBBgbGrIvCIo4xz4VjA/viewform?embedded=true"
-      width="100%"
-      height="600"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      >Loading…</iframe
-    >
+    <section class="container" aria-labelledby="partners-title">
+      <h2 id="partners-title" class="section-title">Partners &amp; Sponsors</h2>
+      <div class="grid">
+        <div class="card sm-6">
+          <p class="muted">Announcing soon. Interested in sponsoring? <a href="#" class="btn" style="margin-top:.6rem;">Get the Sponsor Kit</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <h2>Timeline</h2>
-
-    <ul class="info">
-      <li><strong>{{signup_start_date}}</strong>: Signups open</li>
-
-      <li><strong>{{signup_end_date}}</strong>: Signups close</li>
-
-      <li>
-        <strong>{{signup_end_date}} to {{datathon_2024_start_date}}</strong>:
-        Application review, application status notification, and team formation
-      </li>
-
-      <li>
-        <strong>{{datathon_2024_start_date}}</strong>: Start of datathon,
-        datasets released
-      </li>
-
-      <li>
-        <strong>{{datathon_2024_end_date}}</strong>: Final submissions due at
-        11:59pm AOE
-      </li>
-
-      <li>
-        <strong>{{judgement_day}}</strong>: Finalist presentations in live pitch
-        competition
-      </li>
-    </ul>
-
-    <h2><i class="fa fa-github" style="margin-right: 5px"></i> Tutorials</h2>
-
-    <!-- TODO: update -->
-    <!-- <p class="info">
-      The link to the Datathon&apos;s GitHub repository can be found
-      <a
-        href="https://github.com/MDplusOfficial/Datathon2024/tree/main"
-        target="_blank"
-        >here</a
-      >.
-    </p>
-    <h3>Downloading and Overview of the MIMIC-IV Dataset</h3>
-    <p class="info">
-      <a
-        href="https://github.com/MDplusOfficial/Datathon2024/blob/main/tutorials/MIMIC.md"
-        target="_blank"
-        >Written Tutorial</a
-      >
-    </p> -->
-
-    <h3>Introduction to Python</h3>
-    <p class="info">
-      <a href="/datathon/python">Written Tutorial</a> &ensp;|&ensp;
-      <a
-        href="https://github.com/MDplusOfficial/Datathon2024/blob/main/code/python_/intro.py"
-        target="_blank"
-        >Example Code</a
-      >
-    </p>
-    <h3>Introduction to R</h3>
-    <p class="info">
-      <a href="/datathon/r">Written Tutorial</a> &ensp;|&ensp;
-      <a
-        href="https://github.com/MDplusOfficial/Datathon2024/blob/main/tutorials/INTRO_r.Rmd"
-        target="_blank"
-        >Example Code</a
-      >
-    </p>
-
-    <h2>Events Schedule</h2>
-
-    <p class="info">To be updated soon!</p>
-
-    <!-- TODO: update -->
-    <!-- <p class="info">
-      <b>Wed 10/25 @6p EDT</b>&emsp;<b
-        >Datathon Kickoff Event (<a
-          href="https://youtu.be/7hjTrusgtoc"
-          target="_blank"
-          style="color: rgb(85, 26, 139)"
-          >Recording</a
-        >)</b
-      ><br />&emsp;Join us for the launch of the 2nd annual MD+ datathon event!
-      We&apos;ll cover event logistics, judging, and prizes.
-    </p>
-    <p class="info">
-      <b>Mon 10/30 @7p EDT</b>&emsp;<b
-        >Introduction to Python (<a
-          href="https://youtu.be/bJlYNFWc2vs"
-          target="_blank"
-          style="color: rgb(85, 26, 139)"
-          >Recording</a
-        >)</b
-      ><br />&emsp;Perfect for beginner programmers and for those that have
-      never programmed with Python before.
-    </p>
-    <p class="info">
-      <b>Wed 11/01 @7p EDT</b>&emsp;<b
-        >Navigating MIMIC-IV with Python (<a
-          href="https://youtu.be/9g0GCwywQpI"
-          target="_blank"
-          style="color: rgb(85, 26, 139)"
-          >Recording</a
-        >)</b
-      ><br />&emsp;Learn how to load, parse, and analyze the MIMIC-IV dataset
-      with Python.
-    </p>
-    <p class="info">
-      <b>Tues 11/07 @7p EST</b>&emsp;<b
-        >Office Hours #1 with Lathan: R, General</b
-      ><br />&emsp;Need help debugging an R program or want to bounce your ideas
-      off us? Talk to our team at virtual office hours!
-    </p>
-    <p class="info">
-      <b>Wed 11/08 @7p EST</b>&emsp;<b
-        >Office Hours #2 with Michael: Python, General</b
-      ><br />&emsp;Need help debugging a Python program or want to bounce your
-      ideas off us? Talk to our team at virtual office hours!
-    </p>
-    <p class="info">
-      <b>Sat 11/11 @noon EST</b>&emsp;<b
-        >Office Hours #3 with Michael: Python, General</b
-      ><br />&emsp;Need help debugging a Pythonprogram or want to bounce your
-      ideas off us? Talk to our team at virtual office hours!
-    </p>
-    <p class="info" style="color: rgb(85, 26, 139)">
-      <b>Mon 11/20 @5 EST</b>&emsp;<b
-        >Finalist Pitch Competition (<a
-          href="https://mssm.zoom.us/j/7595547813"
-          target="_blank"
-          style="color: rgb(85, 26, 139)"
-          >Zoom Link</a
-        >)</b
-      ><br />&emsp;Join us in hearing pitches from the seven finalist teams for
-      the 2024 datathon as they vie for the grand prize of $3,000.
-    </p>
-    <p class="info">
-      <b>Asynchronous</b>&emsp;<b
-        >Best Practices in Data Science (<a
-          href="https://drive.google.com/file/d/1lSkRFLWv4L1hGD7emTf68vMjcDWKfAiv/view"
-          target="_blank"
-          style="color: rgb(85, 26, 139)"
-          >Recording</a
-        >)</b
-      ><br />&emsp;Listen to this talk from last year&apos;s datathon by
-      <a href="https://www.linkedin.com/in/ohumblet" target="_blank"
-        >Olivier Humblet</a
-      >, Head of HEOR at Regeneron.
-    </p> -->
-
-    <h2>Meet the Judges</h2>
-
-    <p class="info">To be announced shortly!</p>
-
-    <!-- <h3 style="margin-top: 10px">
-      <a
-        href="https://www.linkedin.com/in/reza-alavi-md-mba"
-        style="color: rgb(85, 26, 139)"
-        >Reza Alavi, MD, MHS, MBA</a
-      >
-    </h3>
-    <p class="info">Johns Hopkins University, Quintuple Aim Solutions</p>
-
-    <h3>
-      <a
-        href="https://www.linkedin.com/in/carolineberchuck"
-        style="color: rgb(85, 26, 139)"
-        >Caroline Berchuck, MD, MPH</a
-      >
-    </h3>
-    <p class="info">
-      Brigham &amp; Women&apos;s Hospital, McKinsey &amp; Company
-    </p>
-
-    <h3>
-      <a
-        href="https://www.linkedin.com/in/amit-phull-09931667"
-        style="color: rgb(85, 26, 139)"
-        >Amit Phull, MD</a
-      >
-    </h3>
-    <p class="info">Northwestern University, Doximity</p>
-
-    <h3>
-      <a
-        href="https://www.linkedin.com/in/sid-salvi"
-        style="color: rgb(85, 26, 139)"
-        >Sid Salvi</a
-      >
-    </h3>
-    <p class="info">ML/AI Product Leader &amp; Advisor, prev. Cerebral</p>
-
-    <h3>
-      <a
-        href="https://www.linkedin.com/in/kathryn-a-teng-md-mba-facp-92b4405b"
-        style="color: rgb(85, 26, 139)"
-        >Kathryn Teng, MD, MBA, FACP</a
-      >
-    </h3>
-    <p class="info">Progressive Insurance, prev. Cleveland Clinic</p> -->
-
-    <h2>FAQs</h2>
-    <h3 style="margin-top: 5px">
-      I have little/no data science or computational experience. Can I still
-      participate?
-    </h3>
-    <p class="info">
-      Absolutely! Learning the computational tools is half the fun of the event.
-      Participants will have access to tutorials walking through the basics of
-      Python and R, and also how to go about analyzing the dataset. Datathon
-      submissions are also judged on more than just technical complexity. In
-      fact, datathon judges care more about the insights derived and the data
-      analysis than the computational novelty or complexity of the project!
-    </p>
-
-    <h3>What will we actually be doing?</h3>
-    <p class="info">
-      Students will be provided a dataset (e.g., claims and hospital data) and
-      are then asked to
-      <b class="purple">identify an addressible problem</b> (e.g., understanding
-      the impact of hospital quality metrics on spending) to
-      <b class="purple">explore through analyzing the dataset</b> (e.g., an
-      observational study comparing high- vs. low- quality hospitals, an
-      interpretable ML model predicting spending rates depending on hospital
-      attributes and outcomes, etc.) to
-      <b class="purple">create an actionable recommendation</b> (e.g., quality
-      metrics should be indexed by spending, and efforts to deliver high quality
-      care will result in more value-based spending habits).
-    </p>
-
-    <h3>
-      I don&apos;t have the best laptop for data analysis... Can I still
-      participate?
-    </h3>
-
-    <h3>What&apos;s the time commitment look like?</h3>
-    <p class="info">
-      It&apos;s flexible and depending on your group and project!
-    </p>
-
-    <h3>I have additional questions? Who can I reach out to?</h3>
-    <p class="info">
-      Send us an email or DM us via Slack! The best folks to reach out are the
-      co-directors of data science and AI,
-      <b class="purple">Emily Leventhal</b>,
-      <b class="purple">Michael Yao</b> (<a href="mailto:michael@mdplusplus.org"
-        >email</a
-      >), or <b class="purple">Lawrence Huang</b>. We&apos;re happy to answer
-      any questions from signing up for the datathon to technical questions
-      during the event.
-    </p>
-
-    <h2>Partners</h2>
-
-    <p class="info">Coming soon!</p>
-
-    <h2>Previous Datathons</h2>
-
-    <p class="info"><a href="/datathon/2023">Datathon 2023</a></p>
-
-    <footer>
-      <p>
-        &#169;<span id="footer-current-year"></span>. A community project made
-        with &#10084;&#65039; by
-        <a href="https://www.mdplus.community">MDplus</a>. All rights reserved.
-        <a href="/changelog">Changelog</a>.
-      </p>
-    </footer>
-    <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='styles/js/footer.js') }}"
-    ></script>
-    <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='styles/js/datathon.js') }}"
-    ></script>
-    <script>
-      // animation for Datathon text
-      consoleText("Datathon 2024", "terminal");
-    </script>
-  </body>
+  <footer>
+    <div class="container foot-grid">
+      <div class="foot-col">
+        <div class="brand" style="margin-bottom:.6rem;">
+          <div class="brand-badge">MD+</div>
+          <div>MD+ Datathon</div>
+        </div>
+        <!-- <div class="muted">© 2025 MD+</div> -->
+      </div>
+      <div class="foot-col">
+        <div class="muted">
+          Questions? Reach out to one of our VPs of AI & Data:
+          <ul style="list-style:none; margin:0; padding:0;">
+            <li>
+              <a href="mailto:alice.smith@example.com" 
+                 style="color:var(--text); text-decoration:none; border-bottom:1px dotted var(--ring);">
+                Emily Leventhal (emily.leventhal@icahn.mssm.edu)
+              </a>
+            </li>
+            <li>
+              <a href="mailto:bob.jones@example.com" 
+                 style="color:var(--text); text-decoration:none; border-bottom:1px dotted var(--ring);">
+                Sahil Suresh (sahil.suresh@tufts.edu)
+              </a>
+            </li>
+            <li>
+              <a href="mailto:carol.lee@example.com" 
+                 style="color:var(--text); text-decoration:none; border-bottom:1px dotted var(--ring);">
+                Bhavana Kunisetty (Bhavana.Kunisetty@bcm.edu)
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- <div class="muted" style="margin-top:.4rem;">Code of Conduct • Privacy • Terms</div> -->
+      </div>
+      <div class="foot-col">
+        <div class="muted">Follow: <a href="#" style="color:var(--text); text-decoration:none;">X</a> · <a href="#" style="color:var(--text); text-decoration:none;">LinkedIn</a> · <a href="#" style="color:var(--text); text-decoration:none;">GitHub</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
 </html>
