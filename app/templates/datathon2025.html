@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-{% set datathon_2025_start_date = "Monday, September 29, 2025" %} {% set
-  datathon_2025_end_date = "Wednesday, October 22, 2025" %} {% set
-  signup_start_date = "Wednesday, September, 10, 2025" %} {% set signup_end_date =
-  "Friday, September 26, 2025" %} {% set judgement_day = "Tuesday, October 28,
-  2025" %}
-<head>
-  <link
-  rel="icon"
-  type="image/png"
-  href="{{ url_for('static', filename='images/mdplus-logo.png') }}"
-/>
+  <head>
+    <link
+    rel="icon"
+
+    type="image/png"
+    href="{{ url_for('static', filename='images/mdplus-logo.png') }}"
+  />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MD+ 2025 Datathon — Empowering Patients Through AI</title>
@@ -18,15 +14,17 @@
   <meta name="color-scheme" content="light dark" />
   <style>
   :root{
-    --brand: #3b79b8;   /* blue */
-    --accent: #f7cd4c;  /* yellow (sparingly) */
-    --bg: #0e1624;      /* deep navy */
-    --bg-2: #0b1220;    /* deeper navy */
-    --text: #f7f9ff;    /* near-white */
-    --muted: #c8d5ea;   /* soft blue-gray */
-    --card: #111a2e;    /* card surface */
-    --ring: #28446a;    /* borders */
-  }
+    --brand:#3b79b8;     /* MDplus blue */
+    --accent:#f7cd4c;    /* MDplus yellow */
+    --main:  #0b0e65;
+    --bg:#ffffff;        /* page */
+    --bg-2:#faf6e5;      /* warm wash */
+    --text:#111826;      /* charcoal */
+    --muted:#2b2b2b;     /* body copy */
+    --ring:#e7e3d2;      /* soft border */
+    --card:#ffffff;      /* card surface */
+    --shadow: 0 10px 30px rgba(17,24,38,.06), 0 2px 10px rgba(17,24,38,.04);
+    }
 
     @media (prefers-color-scheme: light) {
       :root {
@@ -44,10 +42,7 @@
     html, body { height: 100%; }
     body {
       margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background:
-      radial-gradient(1200px 800px at 85% -10%, rgba(59,121,184,.22), transparent 60%), /* brand blue glow */
-      radial-gradient(900px 600px at -10% 25%, rgba(255,255,255,.06), transparent 55%),  /* soft white glow */
-      linear-gradient(180deg, var(--bg), var(--bg-2));
+      background: white;
     color: var(--text);
     }
 
@@ -56,6 +51,7 @@
 
     /* Header */
     header {
+      color: black;
       position: sticky; top: 0; z-index: 50; backdrop-filter: blur(8px);
       background: color-mix(in oklab, var(--bg) 80%, transparent);
       border-bottom: 1px solid color-mix(in oklab, var(--ring) 60%, transparent);
@@ -63,22 +59,17 @@
     .nav { display: flex; align-items: center; justify-content: space-between; padding: .9rem 0; }
     .brand { display: flex; gap: .7rem; align-items: center; font-weight: 800; letter-spacing: .2px; }
     .brand-badge { width: 34px; height: 34px; border-radius: 11px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); display: grid; place-items: center; color: #0b1020; font-weight: 900; }
-    nav a { color: var(--muted); text-decoration: none; margin-left: 1.2rem; font-weight: 600; }
+    nav a { color: black; text-decoration: none; margin-left: 1.2rem; font-weight: 600; }
     nav a:hover { color: var(--text); }
 
     /* Hero */
     .hero { position: relative; padding: 5.5rem 0 4rem; overflow: clip; }
-    .halo {
-      position: absolute; inset: -30% -20% auto -20%; height: 70vh; pointer-events: none;
-      background: radial-gradient(closest-side, rgba(124,140,255,.23), transparent 60%),
-                  radial-gradient(closest-side, rgba(112,255,212,.18), transparent 55%);
-      filter: blur(40px); opacity: .9;
-      mask: radial-gradient(80% 60% at 50% 40%, #000 60%, transparent 100%);
-    }
     .hero h1 { font-size: clamp(2rem, 4.5vw, 4rem); line-height: 1.05; margin: 0 0 1rem; }
     .hero .kicker { text-transform: uppercase; letter-spacing: .22em; font-size: .82rem; color: var(--brand-2); font-weight: 800; }
-    .hero .sub { color: var(--muted); font-size: clamp(1rem, 1.6vw, 1.2rem); max-width: 60ch; }
-
+    .hero .sub { color: var(--main); font-size: clamp(1rem, 1.6vw, 1.2rem); max-width: 60ch; }
+    .main_title {
+      color:var(--main);
+    }
     .cta-row { display: flex; gap: .8rem; flex-wrap: wrap; margin-top: 1.8rem; }
     .btn { border: 1px solid color-mix(in oklab, var(--ring) 65%, transparent); background: color-mix(in oklab, var(--card) 88%, transparent); color: var(--text); padding: .9rem 1.1rem; border-radius: 14px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: .6rem; box-shadow: 0 1px 0 rgba(0,0,0,.12) inset, 0 10px 30px rgba(60,80,255,.10);
       transition: transform .12s ease, background .2s ease, border-color .2s ease; }
@@ -97,7 +88,18 @@
     .card h3 { margin: .2rem 0 .7rem; font-size: 1.2rem; }
     .card p { margin: .4rem 0 0; color: var(--muted); }
 
+    .intro-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+    }
+
+    .intro-card p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      margin-bottom: 1.5rem;
+    }
     @media (min-width: 720px) {
+      .card.sm-10 {grid-column: span 12; }
       .card.sm-6 { grid-column: span 6; }
       .card.sm-4 { grid-column: span 4; }
     }
@@ -129,15 +131,14 @@
   <header>
     <div class="container nav">
       <div class="brand">
-        <div class="brand-badge">MD+</div>
-        <div>MD+ 2025 Datathon</div>
+        <img src="images/mdplus-logo.png" alt="MDplus logo" style="height:40px; width:auto;">
       </div>
       <nav aria-label="Primary">
         <a href="#about">About</a>
         <a href="#theme">Theme</a>
-        <a href="#schedule">Schedule</a>
+        <a href="#timeline">Timeline</a>
         <a href="#faqs">FAQs</a>
-        <a href="#register" class="btn" style="padding:.45rem .75rem;">Register</a>
+        <a href="#TODO:registration_link" class="btn" style="padding:.45rem .75rem; background-color:#f7cd4c; color:#000; border:none;">Register</a>
       </nav>
     </div>
   </header>
@@ -146,11 +147,10 @@
     <section class="hero">
       <div class="halo" aria-hidden="true"></div>
       <div class="container">
-        <div class="kicker">MD+ presents</div>
-        <h1>MD+ 2025 Datathon</h1>
-        <p class="sub">
+        <h1 class="main_title">MD+ 2025 Datathon </h1>
+        <h2 class="sub">
           <strong>Theme:</strong> <em>Empowering Patients Through AI</em>
-        </p>
+        </h2>
         <div class="pills" role="list">
           <div class="pill" role="listitem">Dates: <span class="mono">9/29/25-10/22/25</span></div>
           <div class="pill" role="listitem">Location: <span class="mono">Remote</span></div>
@@ -158,7 +158,7 @@
           <div class="pill" role="listitem">Open to: <span class="mono"> Medical Students · Residents · Graduate Students</span></div>
         </div>
         <div class="cta-row">
-          <a id="register" href="#" class="btn primary" aria-label="Register for the MD+ 2025 Datathon">Register Now</a>
+          <a id="register" href="#TODO:registration_link" class="btn primary" aria-label="Register for the MD+ 2025 Datathon">Register Now</a>
           <!-- <a href="#prospectus" class="btn" aria-label="Download the datathon prospectus">Prospectus (PDF)</a> -->
           <a href="#judges" class="btn" aria-label="See mentors and judges">Judges</a>
         </div>
@@ -168,15 +168,23 @@
     <section id="about" class="container">
       <h2 class="section-title">About the Datathon</h2>
       <div class="grid">
-        <article class="card sm-6">
-          <h3>What is MD+ Datathon?</h3>
+        <article class="card sm-10 intro-card">
+          <h3>What is the MD+ Datathon?</h3>
           <p>The 4th annual MD+ Datathon is a 
             national, month-long event that brings medical students from various backgrounds 
             together to explore complex healthcare challenges and create data-driven solutions. 
             Hosted by MD+ and its partners, the datathon encourages interdisciplinary collaboration, 
-            innovative thinking, and real-world problem solving using clinical datasets.  </p>
+            innovative thinking, and real-world problem solving using clinical datasets. This year, 
+            the theme is <em>Empowering Patients Through AI.</em> </p>
+            <!-- <p>
+              You will be provided datasets (e.g., electronic health record data) and are then asked to 
+              identify an <b>addressible problem</b> (e.g., patients are readmitted soon after discharge) 
+              to explore by <b>analyzing the dataset</b> (e.g., a survival analysis identifying risk factors for 
+              early readmission, or an interpretable ML model predicting readmission probability based on patient data)
+              to create an <b>actionable recommendation or product</b> (e.g., targeted follow-up protocols, medication 
+              reconciliation programs, or patient education initiatives to reduce readmission rates).</p> -->
         </article>
-        <article class="card sm-6">
+        <article class="card sm-4">
           <h3>Why "Empowering Patients Through AI"?</h3>
           <p> Students are encouraged to interpret the theme broadly and creatively, drawing on their 
             unique experiences and interests to define what "empowering patients" means in a data-driven context. 
@@ -185,7 +193,7 @@
         </article>
         <article class="card sm-4">
           <h3>Who should join?</h3>
-          <p>Medical students, residents, and graduate students pursuing degrees related to human health. Multidisciplinary teams are highly encouraged.</p>
+          <p>Medical students, residents, and graduate students pursuing degrees related to human health. Teams will consist of 3-6 trainees. <b>Multidisciplinary teams are highly encouraged.</b></p>
         </article>
         <article class="card sm-4">
           <h3>What you'll get</h3>
@@ -198,64 +206,107 @@
       </div>
     </section>
 
-    <section id="schedule" class="container">
-      <h2 class="section-title">Schedule (TBD)</h2>
-      <ol class="timeline" aria-label="Two-day schedule">
+    <section id="timeline" class="container">
+      <h2 class="section-title">Timeline</h2>
+      <ol class="timeline" aria-label="Timeline">
         <li class="tl-item"><span class="dot" aria-hidden="true"></span>
-          <strong>Day 1 Morning:</strong> Opening Keynote • Problem Briefs • Team Formation
+          <strong>Anytime:</strong> Start finding teammates 2-5 more teammates. <a href="#TODO:team_formation_slides">Find teammates here.</a> 
         </li>
         <li class="tl-item"><span class="dot" aria-hidden="true"></span>
-          <strong>Day 1 Afternoon:</strong> Workshops • Data Access • Mentorship Rounds
+          <strong>Friday, 9/26/25 @ 11:59pm AOE:</strong> Deadline for registration. Each individual submits this form. <a href="#TODO:registration_link">Register here.</a>
         </li>
         <li class="tl-item"><span class="dot" aria-hidden="true"></span>
-          <strong>Day 2 Morning:</strong> Build Sprints • Dry Runs • Safety Checks
+          <strong>Monday, 9/29/25 @ 7pm EST:</strong> Kickoff meeting. <a href="#TODO:gcal_link_kickoff">Calender invite.</a>
         </li>
         <li class="tl-item"><span class="dot" aria-hidden="true"></span>
-          <strong>Day 2 Afternoon:</strong> Demos • Judging • Awards &amp; Closing
+          <strong>Monday, 9/29/25 @ 11:59 AOE:</strong> Team registration deadline. <a href="#TODO:team_formation_link">Register your team via this form.</a> <em>If you have not found teammates, reach out to us!</em>
+        </li>
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Monday, 10/6/25:</strong> Week 2 check-in. <em>Our team will reach out via slack for check-ins.</em>
+        </li>
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Tuesday, 10/14/25: </strong> Week 3 check-in.
+        </li>
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Monday, 10/20/25: </strong> Final check-in.
+        </li>
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Wednesday, 10/22/25 @ 11:59 AM: </strong> Final submission. <a href="#TODO:final_project_link">Submit final projects here.</a>
+        </li>
+        <li class="tl-item"><span class="dot" aria-hidden="true"></span>
+          <strong>Tuesday, 10/28/25 @ 8:00PM EST: </strong> Pitch competition. <a href="#TODO:gcal_link_pitch">Calendar invite.</a>
         </li>
       </ol>
+    </section>
+
+
+    <section id="faqs" class="container">
+      <h2 class="section-title">FAQs</h2>
+      <div class="grid">
+        <!-- <article class="card sm-6">
+          <h3>Can I find my own dataset to use?</h3>
+          <p>Yes! Just let us know via slack.</p>
+        </article> -->
+        <article class="card sm-6">
+          <h3>I have little/no data science or computational experience. Can I still participate?</h3>
+          <p>Absolutely! Learning the computational tools is half the fun of the event. Participants will 
+            have access to tutorials walking through the basics of Python and R, and also how to go about 
+            analyzing the dataset. Datathon submissions are also judged on more than just technical complexity. 
+            In fact, datathon judges care more about the insights derived and the data analysis than the 
+            computational novelty or complexity of the project!
+          </p>
+        </article>
+        <article class="card sm-6">
+          <h3>What is the time commitment?</h3>
+          <p>We encourage all participants to attend the kickoff event and the pitch competition, but other than that, 
+            there are no required synchronous events. The time commitment is as much as you and your team want to put into the project!
+          </p>
+        </article>
+        <!-- <article class="card sm-6">
+          <h3>What are we actually doing in the datathon?</h3>
+          <p>
+            You will be provided datasets (e.g., electronic health record data) and are then asked to 
+            identify an <b>addressible problem</b> (e.g., patients are readmitted soon after discharge) 
+            to explore by <b>analyzing the dataset</b> (e.g., a survival analysis identifying risk factors for 
+            early readmission, or an interpretable ML model predicting readmission probability based on patient data)
+            to create an <b>actionable recommendation or product</b> (e.g., targeted follow-up protocols, medication 
+            reconciliation programs, or patient education initiatives to reduce readmission rates).</p>
+        </article> -->
+        <article class="card sm-6">
+          <h3>What is the final product we are submitting?</h3>
+          <p>Your team will submit a 1-2 page report of your findings along with the code you used. 
+          </p>
+          
+        </article>
+        <article class="card sm-6">
+          <h3>Do I need a team beforehand?</h3>
+          <p>No. Search for teammates by adding your name and bio to these slides.</p>
+        </article>
+        <article class="card sm-6">
+          <h3>Can I see previous examples of projects?</h3>
+          <p>Yes! Last year, our theme was "Responsible Generative AI," and all teams had the option to 
+            publish an abstract-version of their findings in PRISM's special edition journal. <a href="https://carolinaprism.unc.edu/current-issue/">Read the work here.</a> </p>
+        </article>
+      </div>
     </section>
 
     <section id="judges" class="container">
       <h2 class="section-title">Judges (TBD)</h2>
       <div class="grid">
         <article class="card sm-4">
-          <h3>Clinical Mentors</h3>
-          <p>Faculty physicians, nurse leaders, and pharmacists offering domain guidance.</p>
+          <h3>Clinical Experts</h3>
+          <!-- <p></p> -->
         </article>
         <article class="card sm-4">
-          <h3>Data &amp; Product</h3>
-          <p>ML engineers, product managers, and UX researchers to accelerate your build.</p>
+          <h3>AI &amp; Data Experts</h3>
+          <!-- <p>ML engineers, product managers, and UX researchers to accelerate your build.</p> -->
         </article>
         <article class="card sm-4">
-          <h3>Patient Advisors</h3>
-          <p>Patients and caregivers ensuring solutions reflect real needs and constraints.</p>
+          <h3>Patients</h3>
+          <!-- <p>Patients and caregivers ensuring solutions reflect real needs and constraints.</p> -->
         </article>
       </div>
     </section>
-
-    <section id="faqs" class="container">
-      <h2 class="section-title">FAQs</h2>
-      <div class="grid">
-        <article class="card sm-6">
-          <h3>Do I need a team beforehand?</h3>
-          <p>No. Search for teammates by adding your name and bio to these slides.</p>
-        </article>
-        <article class="card sm-6">
-          <h3>Will data be de‑identified?</h3>
-          <p>Yes. All shared datasets are de‑identified and governed by event data use policies.</p>
-        </article>
-        <article class="card sm-6">
-          <h3>What about IP?</h3>
-          <p>Teams retain IP. Sponsors may offer optional collaboration agreements for pilots.</p>
-        </article>
-        <article class="card sm-6">
-          <h3>Is this beginner‑friendly?</h3>
-          <p>Absolutely. We provide starter notebooks, mentor office hours, and UX templates.</p>
-        </article>
-      </div>
-    </section>
-
     <section class="container" aria-labelledby="partners-title">
       <h2 id="partners-title" class="section-title">Partners &amp; Sponsors</h2>
       <div class="grid">
@@ -280,29 +331,30 @@
           Questions? Reach out to one of our VPs of AI & Data:
           <ul style="list-style:none; margin:0; padding:0;">
             <li>
-              <a href="mailto:alice.smith@example.com" 
+              <a href="mailto:emily.leventhal@icahn.mssm.edu" 
                  style="color:var(--text); text-decoration:none; border-bottom:1px dotted var(--ring);">
-                Emily Leventhal (emily.leventhal@icahn.mssm.edu)
+                Emily Leventhal
               </a>
             </li>
             <li>
-              <a href="mailto:bob.jones@example.com" 
+              <a href="mailto:sahil.suresh@tufts.edu" 
                  style="color:var(--text); text-decoration:none; border-bottom:1px dotted var(--ring);">
-                Sahil Suresh (sahil.suresh@tufts.edu)
+                Sahil Suresh
               </a>
             </li>
             <li>
-              <a href="mailto:carol.lee@example.com" 
+              <a href="mailto:Bhavana.Kunisetty@bcm.edu" 
                  style="color:var(--text); text-decoration:none; border-bottom:1px dotted var(--ring);">
-                Bhavana Kunisetty (Bhavana.Kunisetty@bcm.edu)
+                Bhavana Kunisetty
               </a>
             </li>
           </ul>
         </div>
-        <!-- <div class="muted" style="margin-top:.4rem;">Code of Conduct • Privacy • Terms</div> -->
       </div>
       <div class="foot-col">
-        <div class="muted">Follow: <a href="#" style="color:var(--text); text-decoration:none;">X</a> · <a href="#" style="color:var(--text); text-decoration:none;">LinkedIn</a> · <a href="#" style="color:var(--text); text-decoration:none;">GitHub</a></div>
+        <div class="muted">Follow:
+          <a href="https://www.linkedin.com/company/mdplusplus" style="color:var(--text); text-decoration:none;">LinkedIn</a> · 
+          <a href="https://www.instagram.com/mdplus__" style="color:var(--text); text-decoration:none;">Instagram</a></div>
       </div>
     </div>
   </footer>
