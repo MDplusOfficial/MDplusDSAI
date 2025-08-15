@@ -117,10 +117,22 @@
 
 
 <body>
+  <!-- <a href="/"
+      ><img
+        src="{{ url_for('static', filename='images/mdplus-logo.png') }}"
+        alt="MDplus Logo"
+        class="logo"
+    /></a>
+    <nav>
+      <a href="/resources">Resources</a>
+      <a href="/blog">Blog</a>
+      <a href="/network">Network</a>
+      <a href="/datathon/2024" class="active">Datathon</a>
+    </nav> -->
   <header>
     <div class="container nav">
       <div class="brand">
-        <img src="images/mdplus-logo.png" alt="MDplus logo" style="height:40px; width:auto;">
+        <img src="{{ url_for('static', filename='images/mdplus-logo.png') }}" alt="MDplus logo" style="height:40px; width:auto;">
       </div>
       <nav aria-label="Primary">
         <a href="/resources">Resources</a>
