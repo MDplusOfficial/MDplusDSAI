@@ -3,10 +3,9 @@
   <head>
     <link
     rel="icon"
-
     type="image/png"
     href="{{ url_for('static', filename='images/mdplus-logo.png') }}"
-  />
+    />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MD+ 2025 Datathon — Empowering Patients Through AI</title>
@@ -26,18 +25,6 @@
     --shadow: 0 10px 30px rgba(17,24,38,.06), 0 2px 10px rgba(17,24,38,.04);
     }
 
-    @media (prefers-color-scheme: light) {
-      :root {
-        --bg: #f7f8ff;
-        --bg-2: #eef1ff;
-        --text: #131a35;
-        --muted: #4a5686;
-        --brand: #3b5bfd;
-        --brand-2: #06c39d;
-        --card: #ffffff;
-        --ring: #dfe5ff;
-      }
-    }
     * { box-sizing: border-box; }
     html, body { height: 100%; }
     body {
@@ -127,6 +114,8 @@
     @media (min-width: 680px) { .kcard.sm-6{ grid-column: span 6; } }
   </style>
 </head>
+
+
 <body>
   <header>
     <div class="container nav">
@@ -134,6 +123,10 @@
         <img src="images/mdplus-logo.png" alt="MDplus logo" style="height:40px; width:auto;">
       </div>
       <nav aria-label="Primary">
+        <a href="/resources">Resources</a>
+        <a href="/blog">Blog</a>
+        <a href="/network">Network</a>
+        <a href="/datathon/2025" class="active">Datathon</a>
         <a href="#about">About</a>
         <a href="#theme">Theme</a>
         <a href="#timeline">Timeline</a>
