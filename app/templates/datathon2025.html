@@ -113,6 +113,55 @@
     .kgrid { display:grid; grid-template-columns: repeat(12, 1fr); gap: .8rem; }
     .kcard { grid-column: span 12; background: color-mix(in oklab, var(--card) 92%, transparent); border: 1px dashed color-mix(in oklab, var(--ring) 70%, transparent); border-radius: 16px; padding: .9rem; }
     @media (min-width: 680px) { .kcard.sm-6{ grid-column: span 6; } }
+
+    /* === Sponsor Logos Layout === */
+    .sponsor-logos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      padding: 1rem 0;
+    }
+
+    /* === Default Logo Styling === */
+    .sponsor-logo {
+      max-width: 150px;
+      max-height: 70px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      filter: grayscale(100%);
+      transition: filter 0.3s ease, transform 0.3s ease;
+    }
+
+    /* === Gold Sponsors (larger) === */
+    .sponsor-logo.gold {
+      max-width: 180px; /* about 20% larger */
+      max-height: 85px;
+    }
+
+    /* === Hover Effects === */
+    .sponsor-logo:hover {
+      filter: grayscale(0%);
+      transform: scale(1.05);
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 768px) {
+      .sponsor-logo {
+        max-width: 120px;
+        max-height: 50px;
+      }
+
+      .sponsor-logo.gold {
+        max-width: 140px;
+        max-height: 65px;
+      }
+    }
+
+  
+  
   </style>
 </head>
 
@@ -414,41 +463,31 @@
       <section class="container" aria-labelledby="partners-title">
         <h2 id="partners-title" class="section-title">Partners &amp; Sponsors</h2>
       
-        <div class="grid">
+
       
-          <!-- Research Collaborators -->
-          <div class="card sm-6">
-            <h3 class="subsection-title">Research Collaborators</h3>
-            <div class="sponsor-logos">
-              <img src="{{ url_for('static', filename='images/sponsors/AMSA_logo.PNG') }}" alt="AMSA Logo" class="sponsor-logo" />
-              <img src="{{ url_for('static', filename='images/sponsors/conductscience_logo.PNG') }}" alt="ConductScience Logo" class="sponsor-logo" />
-            </div>
+        <!-- Sponsors -->
+        <div class="card sm-6">
+          <h3 class="subsection-title">Sponsors</h3>
+      
+          <h4 class="tier-label gold">Gold</h4>
+          <div class="sponsor-logos">
+            <img src="app/static/images/sponsors/Doximity_logo.png" alt="Doximity Logo" class="sponsor-logo gold" />
+            <img src="app/static/images/sponsors/inflo_logo.jpg" alt="Inflo Logo" class="sponsor-logo gold" />
           </div>
       
-          <!-- Sponsors -->
-          <div class="card sm-6">
-            <h3 class="subsection-title">Sponsors</h3>
-            <div class="sponsor-logos">
-              <!-- Gold Sponsors -->
-              <div class="sponsor-group">
-                <h4 class="tier-label gold">Gold:</h4>
-                <div class="sponsor-row">
-                  <img src="{{ url_for('static', filename='images/sponsors/Doximity_logo.png') }}" alt="Doximity Logo" class="sponsor-logo gold-logo" />
-                  <img src="{{ url_for('static', filename='images/sponsors/inflo_logo.jpg') }}" alt="Inflo Logo" class="sponsor-logo gold-logo" />
-                </div>
-              </div>
-      
-              <!-- Bronze Sponsor -->
-              <div class="sponsor-group">
-                <h4 class="tier-label bronze">Bronze:</h4>
-                <div class="sponsor-row">
-                  <img src="{{ url_for('static', filename='images/sponsors/Offcall_logo.jpeg') }}" alt="Offcall Logo" class="sponsor-logo bronze-logo" />
-                </div>
-              </div>
-            </div>
+          <h4 class="tier-label bronze">Bronze</h4>
+          <div class="sponsor-logos">
+            <img src="app/static/images/sponsors/Offcall_logo.jpeg" alt="Offcall Logo" class="sponsor-logo bronze" />
           </div>
-      
         </div>
+                <!-- Research Collaborators -->
+                <div class="card sm-6">
+                  <h3 class="subsection-title">Research Collaborators</h3>
+                  <div class="sponsor-logos">
+                    <img src="app/static/images/sponsors/AMSA_logo.PNG" alt="AMSA Logo" class="sponsor-logo" />
+                    <img src="app/static/images/sponsors/conductscience_logo.PNG" alt="ConductScience Logo" class="sponsor-logo" />
+                  </div>
+                </div>
       </section>
     <!-- </section>
     <section class="container" aria-labelledby="partners-title">
